@@ -3,3 +3,6 @@ swap
 views
 viminfo
 .netrwhist
+*tags
+*tags-*
+
