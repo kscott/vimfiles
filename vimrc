@@ -91,7 +91,7 @@
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
 	let g:zenburn_alternate_Error = 1
-	colorscheme ir_blue				" load a colorscheme
+	colorscheme rubyblue			" load a colorscheme
 " }
 
 " Key Mappings {
