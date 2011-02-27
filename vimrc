@@ -56,7 +56,9 @@
 	set autowrite					" Automatically save when jumping around buffers
 	set background=dark				" Assume a dark background
 	set backspace=indent,eol,start	" backspace for dummys
-	set colorcolumn=105
+	if v:version >= 703
+		set colorcolumn=105			" Highlight the optimal width for code
+	endif
 	set cursorline					" highlight current line
 	set grepprg=ack					" use ack instead of grep
 	set history=1000				" Store a ton of history (default is 20)
@@ -64,8 +66,9 @@
 	set ignorecase					" case insensitive search
 	set incsearch					" find as you type search
 	set linespace=0					" No extra spaces between rows
-	set listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
+	set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 	set mouse=a						" automatically enable mouse usage
+	set noequalalways				" don't resize windows on splits
 	set noexpandtab					" tabs are tabs, not spaces
 	set nowrap						" wrap long lines
 	set number						" Line numbers on
@@ -86,6 +89,7 @@
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	"set wildmenu					" show list instead of just completing
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
+	set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
 	set winminheight=0				" windows can be 0 characters wide
 	set winminheight=0				" windows can be 0 line high 
 
@@ -203,4 +207,27 @@
 
 	" NERDCommenter settings
 	let NERDDefaultNesting = 0
+	
+	" NERDTree configuration
+	let NERDTreeIgnore=['\.rbc$', '\~$']
+	map <Leader>n :NERDTreeToggle<CR>
+
+	" Command-T configuration
+	let g:CommandTMaxHeight=20
+
+	" ZoomWin configuration
+	map <Leader>z :ZoomWin<CR>
+
+	" CTags
+	map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+	
+	" Enable syntastic syntax checking
+	let g:syntastic_enable_signs=1
+	let g:syntastic_quiet_warnings=1
 " }
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
