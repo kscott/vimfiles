@@ -1,4 +1,4 @@
-" Last Modified: Sun Aug 22 02:06:56 2010 MDT
+" Last Modified: Sat Feb 26 23:04:33 2011 MST
 "
 " Setup Bundle Support {
 " The next two lines ensure that the ~/.vim/bundle/ system works
@@ -56,7 +56,7 @@
 	set autowrite					" Automatically save when jumping around buffers
 	set background=dark				" Assume a dark background
 	set backspace=indent,eol,start	" backspace for dummys
-	"set colorcolumn=105
+	set colorcolumn=105
 	set cursorline					" highlight current line
 	set grepprg=ack					" use ack instead of grep
 	set history=1000				" Store a ton of history (default is 20)
@@ -85,12 +85,11 @@
 	set tildeop						" make the tilde key act as an operator
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	"set wildmenu					" show list instead of just completing
-	set wildmode=list:longest,full	" comand <Tab> completion, list matches, then longest common part, then all.
+	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
 	set winminheight=0				" windows can be 0 characters wide
 	set winminheight=0				" windows can be 0 line high 
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
-	let g:zenburn_alternate_Error = 1
 	colorscheme rubyblue			" load a colorscheme
 " }
 
@@ -202,10 +201,6 @@
 	let g:CommandTMaxHeight = 10
 	let g:CommandTMatchWindowAtTop = 1
 
-	" vim-ruby settings
-	let ruby_operators = 1
-	let ruby_space_errors = 1
-	
 	" NERDCommenter settings
 	let NERDDefaultNesting = 0
 " }
