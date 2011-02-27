@@ -111,18 +111,6 @@
 	vmap <Tab> >gv
 	vmap <S-Tab> <gv
 
-	" Custom mappings for NERDCommenter
-	map <D-/> <leader>ci
-	vmap <D-/> <leader>cigv
-
-	" Custom mapping for Ack Plugin
-	map <D-F> :Ack<space>
-
-	" Custom mapping for hexHighlighter plugin
-	if exists('*HexHighlight()')
-	  nmap <leader>h :call HexHighlight()<Return>
-	endif
-
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	nnoremap Y y$
 
@@ -137,27 +125,20 @@
 	vnoremap <D-S-Down> :m'>+<CR>gv=gv
 	vnoremap <D-S-Up> :m-2<CR>gv=gv
 
-	map <Leader>c	:ColorRGB<CR>
-	map <Leader>x	:ColorHEX<CR>
-
 " }
 
 " Autocommands {
 	if has("autocmd")
 		autocmd BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		autocmd BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
-		"autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
-		autocmd BufNewFile,BufRead * if exists("b:current_syntax")
-		autocmd BufNewFile,BufRead *	exe 'syn keyword ' . b:current_syntax . 'Todo contained TODO FIXME ATTENTION'
-		autocmd BufNewFile,BufRead *	exe 'syn match ' . b:current_syntax . 'Todo contained "!!!!*\|????*\|\*\*\*\**"'
-		autocmd BufNewFile,BufRead *	exe 'syn keyword ' . b:current_syntax . 'CommentWarning contained WARNING NOTICE DANGER'
-		autocmd BufNewFile,BufRead *	exe 'syn cluster ' . b:current_syntax . 'CommentGroup contains=' . b:current_syntax . 'Todo,' . b:current_syntax . 'CommentWarning'
-		autocmd BufNewFile,BufRead *	exe 'hi link ' . b:current_syntax . 'CommentWarning Warning'
-		autocmd BufNewFile,BufRead * endif
+		au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 		" PHP coding settings
-		autocmd FileType php noremap <C-M> :!php -l %<CR>
+		augroup PHP
+			autocmd!
+			autocmd FileType php noremap <C-M> :!php -l %<CR>
+		augroup END
 
 		" Ruby coding settings"
 		augroup Ruby
@@ -202,12 +183,17 @@
 	let g:sqlutil_align_first_word = 1
 
 	" Command-T
-	let g:CommandTMaxHeight = 10
+	let g:CommandTMaxHeight = 8
 	let g:CommandTMatchWindowAtTop = 1
 
 	" NERDCommenter settings
 	let NERDDefaultNesting = 0
-	
+	map <D-/> <leader>ci
+	vmap <D-/> <leader>cigv
+
+	" Custom mapping for Ack Plugin
+	map <D-F> :Ack<space>
+
 	" NERDTree configuration
 	let NERDTreeIgnore=['\.rbc$', '\~$']
 	map <Leader>n :NERDTreeToggle<CR>
@@ -224,7 +210,9 @@
 	" Enable syntastic syntax checking
 	let g:syntastic_enable_signs=1
 	let g:syntastic_quiet_warnings=1
-" }
+
+	let g:SuperTabMappingForward = '<c-space>'
+	let g:SuperTabMappingBackward = '<s-c-space>'
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
