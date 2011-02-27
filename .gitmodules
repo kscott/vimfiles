@@ -7,3 +7,57 @@
 [submodule "vim/colors/rubyblue"]
 	path = vim/colors/rubyblue
 	url = git@github.com:kscott/rubyblue.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/jslint"]
+	path = vim/bundle/jslint
+	url = https://github.com/hallettj/jslint.vim.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/autocomplpop"]
+	path = vim/bundle/autocomplpop
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "vim/bundle/Align"]
+	path = vim/bundle/Align
+	url = https://github.com/vim-scripts/Align.git
+[submodule "vim/bundle/SQLUtilities"]
+	path = vim/bundle/SQLUtilities
+	url = https://github.com/vim-scripts/SQLUtilities.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
+	url = https://github.com/spf13/snipmate.vim.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = git@github.com:kscott/snipmate-snippets.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/checksyntax_vim"]
+	path = vim/bundle/checksyntax_vim
+	url = https://github.com/tomtom/checksyntax_vim.git
+[submodule "vim/bundle/gundo.vim"]
+	path = vim/bundle/gundo.vim
+	url = https://github.com/nvie/gundo.vim.git
+[submodule "vim/vim-repeat"]
+	path = vim/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/vim-git"]
+	path = vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
