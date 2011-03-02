@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim-scratch"]
 	path = vim/bundle/vim-scratch
 	url = https://github.com/duff/vim-scratch.git
+[submodule "vim/bundle/vim-extradite"]
+	path = vim/bundle/vim-extradite
+	url = https://github.com/int3/vim-extradite.git
