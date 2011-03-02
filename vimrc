@@ -125,6 +125,9 @@
 	vnoremap <D-S-Down> :m'>+<CR>gv=gv
 	vnoremap <D-S-Up> :m-2<CR>gv=gv
 
+	map <F5> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+	\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+	\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }
 
 " Autocommands {
