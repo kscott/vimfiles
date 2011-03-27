@@ -54,7 +54,6 @@
 
 	set autoindent					" indent at the same level of the previous line
 	set autowrite					" Automatically save when jumping around buffers
-	set background=dark				" Assume a dark background
 	set backspace=indent,eol,start	" backspace for dummys
 	if v:version >= 703
 		set colorcolumn=105			" Highlight the optimal width for code
@@ -94,7 +93,9 @@
 	set winminheight=0				" windows can be 0 line high 
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
-	colorscheme rubyblue			" load a colorscheme
+	let g:solarized_termcolors=16
+	set background=light
+	colorscheme solarized			" load a colorscheme
 " }
 
 " Key Mappings {
