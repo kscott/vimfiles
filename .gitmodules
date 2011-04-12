@@ -100,3 +100,6 @@
 [submodule "vim/bundle/Vim-PHP-Doc/after/syntax"]
 	path = vim/bundle/Vim-PHP-Doc/after/syntax
 	url = https://github.com/tetsuo13/Vim-PHP-Doc.git
+[submodule "vim/bundle/AfterColors.vim"]
+	path = vim/bundle/AfterColors.vim
+	url = https://github.com/vim-scripts/AfterColors.vim.git
