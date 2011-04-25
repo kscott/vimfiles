@@ -106,3 +106,6 @@
 [submodule "vim/bundle/tcomment_vim"]
 	path = vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim/vip"]
+	path = vim/vip
+	url = https://github.com/tobyS/vip.git
