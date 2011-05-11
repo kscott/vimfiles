@@ -93,7 +93,9 @@
 	set winminheight=0				" windows can be 0 line high 
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
+
 	let g:solarized_visibility = "low"
+	let g:solarized_hitrail = 1
 	set background=light
 	colorscheme solarized			" load a colorscheme
 " }
