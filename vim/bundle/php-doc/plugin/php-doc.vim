@@ -1,1 +1,1 @@
-vip/.vim/php-doc.vim
+../../../vip/.vim/php-doc.vim
