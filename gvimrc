@@ -13,6 +13,7 @@ endif
 
 if exists('+fuoptions')
 	set fuoptions=maxhorz,maxvert
+	set fu
 endif
 
 if has("Win32")
