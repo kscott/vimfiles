@@ -22,7 +22,6 @@ if has("Win32")
 	set guioptions=gmrbt
 
 elseif has("mac")
-	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=R
 	set guioptions-=l
