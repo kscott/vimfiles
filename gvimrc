@@ -13,7 +13,7 @@ endif
 
 if exists('+fuoptions')
 	set fuoptions=maxhorz,maxvert
-	set fu
+	"set fu
 endif
 
 if has("Win32")
@@ -22,6 +22,12 @@ if has("Win32")
 	set guioptions=gmrbt
 
 elseif has("mac")
+	set guioptions-=T
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=l
+	set guioptions-=L
+	set guioptions-=b
 	"set guifont=Monaco:h14
 	set guifont=Consolas:h15.00,Monaco:h14
 	if has("gui_macvim")
