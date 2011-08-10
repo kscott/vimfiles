@@ -194,20 +194,15 @@
 	let g:CommandTMaxHeight = 8
 	let g:CommandTMatchWindowAtTop = 1
 
-	" NERDCommenter settings
-	let NERDDefaultNesting = 0
-	map <D-/> <leader>ci
-	vmap <D-/> <leader>cigv
-
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
+
+	" TComment setup
+	map <D-/> :TComment<CR>
 
 	" NERDTree configuration
 	let NERDTreeIgnore=['\.rbc$', '\~$']
 	map <Leader>n :NERDTreeToggle<CR>
-
-	" Command-T configuration
-	let g:CommandTMaxHeight=20
 
 	" ZoomWin configuration
 	map <Leader>z :ZoomWin<CR>
@@ -221,6 +216,11 @@
 
 	let g:SuperTabMappingForward = '<c-space>'
 	let g:SuperTabMappingBackward = '<s-c-space>'
+
+	" UltiSnips configuration
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<tab>"
+	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
