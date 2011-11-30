@@ -5,4 +5,5 @@ viminfo
 .netrwhist
 *tags
 *tags-*
+*.pyc
 
