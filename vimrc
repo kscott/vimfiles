@@ -78,6 +78,7 @@
 	set shiftwidth=4				" use indents of 4 spaces
 	set shortmess+=filmnrxoOtT		" abbrev. of messages (avoids 'hit enter')
 	set showcmd						" show partial commands in status line and selected characters/lines in visual mode
+	set cmdheight=1
 	set showmatch					" show matching brackets/parenthesis
 	set showmode					" display the current mode
 	set smartcase					" case sensitive when uc present

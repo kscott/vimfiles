@@ -1,7 +1,6 @@
 " Last Modified: Sat Feb 26 16:06:21 2011 MST
 
 
-set cmdheight=1
 set columns=125
 set guioptions-=T
 set lines=50
