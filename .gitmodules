@@ -109,3 +109,6 @@
 [submodule "vim/bundles/jslint"]
 	path = vim/bundles/jslint
 	url = https://github.com/csexton/jslint.vim.git
+[submodule "vim/bundles/lusty"]
+	path = vim/bundles/lusty
+	url = https://github.com/sjbach/lusty.git
