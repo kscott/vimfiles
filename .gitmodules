@@ -106,3 +106,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/rygwdn/ultisnips.git
+[submodule "vim/bundles/jslint"]
+	path = vim/bundles/jslint
+	url = https://github.com/csexton/jslint.vim.git
