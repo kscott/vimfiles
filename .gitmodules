@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/snippets"]
+	path = vim/bundle/snippets
+	url = git@github.com:kscott/snipmate-snippets-1.git
