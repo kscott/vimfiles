@@ -60,6 +60,7 @@
 	endif
 	set cursorline					" highlight current line
 	set grepprg=ack					" use ack instead of grep
+	set hidden
 	set history=1000				" Store a ton of history (default is 20)
 	set hlsearch					" highlight search terms
 	set ignorecase					" case insensitive search
