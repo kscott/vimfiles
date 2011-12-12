@@ -115,3 +115,9 @@
 [submodule "vim/bundle/snippets"]
 	path = vim/bundle/snippets
 	url = git@github.com:kscott/snipmate-snippets-1.git
+[submodule "vim/bundle/TagmaBufMgr"]
+	path = vim/bundle/TagmaBufMgr
+	url = https://github.com/LStinson/TagmaBufMgr.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/rogerz/vim-json

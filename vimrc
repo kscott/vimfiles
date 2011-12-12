@@ -1,15 +1,15 @@
 " Last Modified: Sat Feb 26 23:04:33 2011 MST
 "
+" Basics {
+	set nocompatible		" must be first line
+" }
+
 " Setup Bundle Support {
 " The next two lines ensure that the ~/.vim/bundle/ system works
 	filetype off
 	runtime! autoload/pathogen.vim
 	silent! call pathogen#runtime_append_all_bundles()
 	silent! call pathogen#helptags()
-" }
-
-" Basics {
-	set nocompatible		" must be first line
 " }
 
 " General {
@@ -223,6 +223,9 @@
 	let g:UltiSnipsExpandTrigger="<tab>"
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+	"snipMate configuration
+    " let g:snipMate['no_match_completion_feedkeys_chars'] = "\<tab>"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
