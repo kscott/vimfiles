@@ -227,6 +227,12 @@
 	"snipMate configuration
     " let g:snipMate['no_match_completion_feedkeys_chars'] = "\<tab>"
 
+	"TagmaBufMgr settings
+	let g:TagmaBufMgrLastWindow = 1
+
+	let g:LustyExplorerSuppressRubyWarning = 1
+	let g:LustyJugglerSuppressRubyWarning = 1
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
