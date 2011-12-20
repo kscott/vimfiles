@@ -144,12 +144,6 @@
 
 		au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-		" PHP coding settings
-		augroup PHP
-			autocmd!
-			autocmd FileType php noremap <C-M> :!php -l %<CR>
-		augroup END
-
 		" Ruby coding settings"
 		augroup Ruby
 			autocmd!
