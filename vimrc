@@ -84,6 +84,7 @@
 	set showmode					" display the current mode
 	set smartcase					" case sensitive when uc present
 	set smarttab
+	set softtabstop=4				" How wide for soft tabs
 	set tabstop=4					" an indentation every four columns
 	set tags=./tmtags,tmtags,./tags,tags;$HOME
 	set tildeop						" make the tilde key act as an operator
@@ -98,7 +99,7 @@
 
 	let g:solarized_visibility = "low"
 	let g:solarized_hitrail = 1
-	set background=light
+	set background=dark
 	colorscheme solarized			" load a colorscheme
 " }
 
@@ -113,8 +114,8 @@
 	map <Leader>, :nohl<CR>
 
 	" Let tab key in visual mode change the indent level of the selection
-	vmap <Tab> >gv
-	vmap <S-Tab> <gv
+	vnoremap <Tab> >gv
+	vnoremap <S-Tab> <gv
 
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	nnoremap Y y$

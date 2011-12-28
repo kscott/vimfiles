@@ -5,6 +5,7 @@ set columns=125
 set guioptions-=T
 set lines=50
 set printoptions=syntax:y,paper:letter
+set background=light
 
 if exists("+antialias")
 	set antialias
