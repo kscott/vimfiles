@@ -127,6 +127,3 @@
 [submodule "vim/bundle/argtextobj.vim"]
 	path = vim/bundle/argtextobj.vim
 	url = https://github.com/vim-scripts/argtextobj.vim.git
-[submodule "vim/bundle/vim-pasta"]
-	path = vim/bundle/vim-pasta
-	url = https://github.com/sickill/vim-pasta.git
