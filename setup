@@ -1,9 +1,0 @@
-#! /bin/sh
-
-CURRENT_DIR=$(pwd)
-ln -s $CURRENT_DIR/vim $HOME/.vim
-ln -s $CURRENT_DIR/vimrc $HOME/.vimrc
-ln -s $CURRENT_DIR/gvimrc $HOME/.gvimrc
-
-git submodule init
-git submodule update
