@@ -103,9 +103,6 @@
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim
-[submodule "vim/bundle/jslint"]
-	path = vim/bundle/jslint
-	url = git@github.com:kscott/jslint.vim.git
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
@@ -127,3 +124,6 @@
 [submodule "vim/bundle/argtextobj.vim"]
 	path = vim/bundle/argtextobj.vim
 	url = https://github.com/vim-scripts/argtextobj.vim.git
+[submodule "vim/bundle/vim-jshint"]
+	path = vim/bundle/vim-jshint
+	url = https://github.com/sleistner/vim-jshint.git
