@@ -22,17 +22,9 @@ if has("Win32")
 	set guioptions=gmrbt
 
 elseif has("mac")
-	set guioptions-=r
-	set guioptions-=R
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=b
+	set guioptions-=rRlLb
 	"set guifont=Monaco:h14
 	set guifont=Consolas:h15.00,Monaco:h14
-	if has("gui_macvim")
-		macmenu &File.New\ Tab key=<nop>
-		map <D-t> :CommandT<CR>
-	endif
 
 elseif has("linux")
 

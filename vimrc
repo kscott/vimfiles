@@ -187,10 +187,6 @@
 	let g:sqlutil_keyword_case = '\U'
 	let g:sqlutil_align_first_word = 1
 
-	" Command-T
-	let g:CommandTMaxHeight = 8
-	let g:CommandTMatchWindowAtTop = 1
-
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
 
