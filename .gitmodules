@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-jshint"]
 	path = vim/bundle/vim-jshint
 	url = https://github.com/sleistner/vim-jshint.git
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
