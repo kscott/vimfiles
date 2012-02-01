@@ -22,7 +22,12 @@ if has("Win32")
 	set guioptions=gmrbt
 
 elseif has("mac")
-	set guioptions-=rRlLb
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=l
+	set guioptions-=L
+	set guioptions-=b
+
 	"set guifont=Monaco:h14
 	set guifont=Consolas:h15.00,Monaco:h14
 

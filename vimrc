@@ -21,11 +21,11 @@
 		set viminfo='50,<1000,s100,:0,n~/.vim/viminfo
 		set backup						" backups are nice ...
 		set backupcopy=auto
-		set backupdir=$HOME/.vim/backup	" but not when they clog .
+		set backupdir=$HOME/.vim/backup//	" but not when they clog .
 		set directory=$HOME/.vim/swap//	" Same for swap files
-		set viewdir=$HOME/.vim/views	" same but for view files
+		set viewdir=$HOME/.vim/views//	" same but for view files
 		if v:version >= 703
-    		set undodir=$HOME/.vim/undo     " same for persisitent undo
+    		set undodir=$HOME/.vim/undo//     " same for persisitent undo
     		set undofile
     		set undolevels=1000
     		set undoreload=10000
@@ -51,6 +51,7 @@
 	endif
 
 	let mapleader=","
+	let maplocalleader="\\"
 
 	set autoindent					" indent at the same level of the previous line
 	set autowrite					" Automatically save when jumping around buffers
@@ -111,7 +112,7 @@
 	map <C-L> <C-W>l<C-W>_
 	map <C-H> <C-W>h<C-W>_
 
-	map <Leader>/ :nohl<CR>
+	map <Leader>; :nohl<CR>
 
 	" Let tab key in visual mode change the indent level of the selection
 	vnoremap <Tab> >gv
@@ -119,6 +120,10 @@
 
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	nnoremap Y y$
+
+	" Enable Very Magic for search/replace
+	nnoremap / /\v
+	vnoremap / /\v
 
 	" Shortcuts
 	" Change Working Directory to that of the current file
@@ -148,15 +153,15 @@
 		" Ruby coding settings"
 		augroup Ruby
 			autocmd!
-			autocmd FileType ruby set autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			autocmd FileType ruby set foldenable foldmethod=syntax
+			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+			autocmd FileType ruby setlocal foldenable foldmethod=syntax
 		augroup END
 
 		" Cucumber coding settings"
 		augroup Cucumber
 			autocmd!
-			autocmd FileType cucumber set autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			autocmd FileType cucumber set foldenable foldmethod=syntax
+			autocmd FileType cucumber setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+			autocmd FileType cucumber setlocal foldenable foldmethod=syntax
 		augroup END
 
 		" autocomplete functions and identifiers for languages
@@ -189,12 +194,18 @@
 
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
+	map <leader>a :Ack!
 
 	" ZoomWin configuration
 	map <Leader>z :ZoomWin<CR>
 
 	let g:LustyExplorerSuppressRubyWarning = 1
 	let g:LustyJugglerSuppressRubyWarning = 1
+
+	" Commentary
+	nmap <D-/> <Plug>CommentaryLine
+	xmap <D-/> <Plug>Commentary
+
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
