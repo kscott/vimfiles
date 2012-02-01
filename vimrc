@@ -105,6 +105,14 @@
 " }
 
 " Key Mappings {
+	map Q gq
+	map <leader>ga :CommandTFlush<cr>\|:CommandT ~/CCB/src/app<cr>
+	map <leader>gr :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources<cr>
+	map <leader>gj :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources/js<cr>
+	map <leader>gc :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources/css<cr>
+	map <leader>gb :CommandTFlush<cr>\|:CommandT ~/CCB/src/bbt<cr>
+
+	nnoremap <leader><leader> <c-^>
 
 	" Easier moving in tabs and windows
 	map <C-J> <C-W>j<C-W>_
