@@ -22,9 +22,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
-[submodule "vim/bundle/gundo.vim"]
-	path = vim/bundle/gundo.vim
-	url = https://github.com/nvie/gundo.vim.git
 [submodule "vim/vim-repeat"]
 	path = vim/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
