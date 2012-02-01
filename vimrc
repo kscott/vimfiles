@@ -22,7 +22,7 @@
 		set backup						" backups are nice ...
 		set backupcopy=auto
 		set backupdir=$HOME/.vim/backup	" but not when they clog .
-		set directory=$HOME/.vim/swap	" Same for swap files
+		set directory=$HOME/.vim/swap//	" Same for swap files
 		set viewdir=$HOME/.vim/views	" same but for view files
 		if v:version >= 703
     		set undodir=$HOME/.vim/undo     " same for persisitent undo
