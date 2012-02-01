@@ -1,4 +1,4 @@
-" Last Modified: Sat Feb 26 23:04:33 2011 MST
+" Last Modified: Tue Jan 31 21:32:49 2012 MST
 "
 " Basics {
 	set nocompatible		" must be first line
@@ -111,7 +111,7 @@
 	map <C-L> <C-W>l<C-W>_
 	map <C-H> <C-W>h<C-W>_
 
-	map <Leader>, :nohl<CR>
+	map <Leader>/ :nohl<CR>
 
 	" Let tab key in visual mode change the indent level of the selection
 	vnoremap <Tab> >gv
@@ -190,36 +190,8 @@
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
 
-	" TComment setup
-	map <D-/> :TComment<CR>
-
-	" NERDTree configuration
-	let NERDTreeIgnore=['\.rbc$', '\~$']
-	map <Leader>n :NERDTreeToggle<CR>
-
 	" ZoomWin configuration
 	map <Leader>z :ZoomWin<CR>
-
-	" CTags
-	map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-	
-	" Enable syntastic syntax checking
-	let g:syntastic_enable_signs=1
-	let g:syntastic_quiet_warnings=1
-
-	let g:SuperTabMappingForward = '<c-space>'
-	let g:SuperTabMappingBackward = '<s-c-space>'
-
-	" UltiSnips configuration
-	let g:UltiSnipsExpandTrigger="<tab>"
-	let g:UltiSnipsJumpForwardTrigger="<tab>"
-	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-	"snipMate configuration
-    " let g:snipMate['no_match_completion_feedkeys_chars'] = "\<tab>"
-
-	"TagmaBufMgr settings
-	let g:TagmaBufMgrLastWindow = 1
 
 	let g:LustyExplorerSuppressRubyWarning = 1
 	let g:LustyJugglerSuppressRubyWarning = 1
