@@ -214,6 +214,9 @@
 	nmap <D-/> <Plug>CommentaryLine
 	xmap <D-/> <Plug>Commentary
 
+	" Syntastic
+	let g:syntastic_auto_jump=1
+	let g:syntastic_auto_loc_list=1
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
