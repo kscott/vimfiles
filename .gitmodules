@@ -40,9 +40,6 @@
 [submodule "vim/bundle/vim-speeddating"]
 	path = vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -76,3 +73,6 @@
 [submodule "vim/bundle/itchy.vim"]
 	path = vim/bundle/itchy.vim
 	url = https://github.com/programble/itchy.vim.git
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
