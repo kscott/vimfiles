@@ -233,6 +233,8 @@
 	let g:syntastic_auto_jump=1
 	let g:syntastic_auto_loc_list=1
 
+	" Itchy
+	nmap <Leader>s :Scratch<CR>
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
