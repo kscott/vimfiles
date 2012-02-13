@@ -76,3 +76,6 @@
 [submodule "vim/bundle/vim-javascript-syntax"]
 	path = vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/bundle/badwolf"]
+	path = vim/bundle/badwolf
+	url = https://github.com/sjl/badwolf.git

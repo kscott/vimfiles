@@ -99,9 +99,9 @@
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
 
 	let g:solarized_visibility = "low"
-	let g:solarized_hitrail = 1
+	" let g:solarized_hitrail = 1
 	set background=dark
-	colorscheme solarized			" load a colorscheme
+	colorscheme my-solarized			" load a colorscheme
 " }
 
 " Key Mappings {
@@ -122,7 +122,6 @@
 
 	" GRB: clear the search buffer when hitting return
 	:nnoremap <CR> :nohlsearch<CR>/<BS>
-	" map <Leader>; :nohl<CR>
 
 	" Remap the tab key to do autocompletion or indentation depending on the
 	" context (from http://www.vim.org/tips/tip.php?tip_id=102)
