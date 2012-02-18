@@ -172,11 +172,16 @@
 
 		au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
+		" PHP coding settings"
+		augroup PHP
+			autocmd!
+			autocmd FileType php setlocal autoindent tabstop=4 shiftwidth=4 softtabstop=4 smarttab noexpandtab formatoptions=croq commentstring=//\ %s
+		augroup END
+
 		" Ruby coding settings"
 		augroup Ruby
 			autocmd!
 			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			autocmd FileType ruby setlocal foldenable foldmethod=syntax
 		augroup END
 
 		" Cucumber coding settings"
