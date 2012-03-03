@@ -191,7 +191,6 @@
 		augroup Cucumber
 			autocmd!
 			autocmd FileType cucumber setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			autocmd FileType cucumber setlocal foldenable foldmethod=syntax
 		augroup END
 
 		" autocomplete functions and identifiers for languages
