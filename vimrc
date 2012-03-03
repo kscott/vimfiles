@@ -57,7 +57,7 @@
 	set autowrite					" Automatically save when jumping around buffers
 	set backspace=indent,eol,start	" backspace for dummys
 	if v:version >= 703
-		set colorcolumn=105			" Highlight the optimal width for code
+		set colorcolumn=125			" Highlight the optimal width for code
 	endif
 	set cursorline					" highlight current line
 	set grepprg=ack					" use ack instead of grep
@@ -67,7 +67,7 @@
 	set ignorecase					" case insensitive search
 	set incsearch					" find as you type search
 	set linespace=0					" No extra spaces between rows
-	set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
+	set nolist
 	set mouse=a						" automatically enable mouse usage
 	set noequalalways				" don't resize windows on splits
 	set noexpandtab					" tabs are tabs, not spaces
@@ -101,7 +101,7 @@
 	let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
-	colorscheme my-solarized			" load a colorscheme
+	colorscheme grb256			" load a colorscheme
 " }
 
 " Key Mappings {
@@ -146,6 +146,9 @@
 	" Enable Very Magic for search/replace
 	nnoremap / /\v
 	vnoremap / /\v
+
+	" Open tag definitions in a vertical split
+	map <D-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 	" Shortcuts
 	" Change Working Directory to that of the current file
