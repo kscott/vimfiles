@@ -220,6 +220,7 @@
 	let g:sqlutil_default_menu_mode = 0
 	let g:sqlutil_keyword_case = '\U'
 	let g:sqlutil_align_first_word = 1
+	let g:sqlutil_wrap_expressions = 1
 
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
