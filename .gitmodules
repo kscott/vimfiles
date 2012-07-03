@@ -55,9 +55,6 @@
 [submodule "vim/bundle/argtextobj.vim"]
 	path = vim/bundle/argtextobj.vim
 	url = https://github.com/vim-scripts/argtextobj.vim.git
-[submodule "vim/bundle/vim-jshint"]
-	path = vim/bundle/vim-jshint
-	url = https://github.com/sleistner/vim-jshint.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -88,3 +85,6 @@
 [submodule "vim/bundle/Smyck-Color-Scheme"]
 	path = vim/bundle/Smyck-Color-Scheme
 	url = https://github.com/hukl/Smyck-Color-Scheme.git
+[submodule "vim/bundle/lint.vim"]
+	path = vim/bundle/lint.vim
+	url = https://github.com/joestelmach/lint.vim.git

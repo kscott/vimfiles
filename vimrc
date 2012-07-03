@@ -244,11 +244,8 @@
 	" Itchy
 	nmap <Leader>s :Scratch<CR>
 
-	" Powerline
-	let Powerline_symbols='fancy'
-	let Powerline_theme='default'
-	let Powerline_colorscheme='default'
-	let Powerline_stl_path_style='short'
+	" JSHint
+	let jshint_highlight_color = "#d33682"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

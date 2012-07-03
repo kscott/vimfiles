@@ -9,7 +9,7 @@ set background=light
 
 set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 set background=light
-colorscheme my-solarized
+colorscheme solarized
 
 if exists("+antialias")
 	set antialias
@@ -33,8 +33,7 @@ elseif has("mac")
 	set guioptions-=b
 
 	"set guifont=Monaco:h14
-	"set guifont=Consolas:h15.00,Monaco:h14
-	set guifont=Consolas_for_Powerline:h15,Consolas:h15.00,Monaco:h14
+	set guifont=Consolas:h15.00,Monaco:h14
 
 elseif has("linux")
 
