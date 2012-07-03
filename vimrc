@@ -245,7 +245,7 @@
 	nmap <Leader>s :Scratch<CR>
 
 	" JSHint
-	let jshint_highlight_color = "#d33682"
+	let lint_highlight_color = "LightSteelBlue"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
