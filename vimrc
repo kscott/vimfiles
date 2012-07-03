@@ -60,6 +60,7 @@
 		set colorcolumn=125			" Highlight the optimal width for code
 	endif
 	set cursorline					" highlight current line
+	set encoding=utf-8
 	set grepprg=ack					" use ack instead of grep
 	set hidden
 	set history=1000				" Store a ton of history (default is 20)
@@ -242,6 +243,13 @@
 
 	" Itchy
 	nmap <Leader>s :Scratch<CR>
+
+	" Powerline
+	let Powerline_symbols='fancy'
+	let Powerline_theme='default'
+	let Powerline_colorscheme='default'
+	let Powerline_stl_path_style='short'
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

@@ -33,7 +33,8 @@ elseif has("mac")
 	set guioptions-=b
 
 	"set guifont=Monaco:h14
-	set guifont=Consolas:h15.00,Monaco:h14
+	"set guifont=Consolas:h15.00,Monaco:h14
+	set guifont=Consolas_for_Powerline:h15,Consolas:h15.00,Monaco:h14
 
 elseif has("linux")
 
