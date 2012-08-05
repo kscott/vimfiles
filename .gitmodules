@@ -88,3 +88,6 @@
 [submodule "vim/bundle/lint.vim"]
 	path = vim/bundle/lint.vim
 	url = https://github.com/joestelmach/lint.vim.git
+[submodule "vim/bundle/lucius.vim"]
+	path = vim/bundle/lucius.vim
+	url = https://github.com/vim-scripts/Lucius.git
