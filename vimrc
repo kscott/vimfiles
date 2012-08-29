@@ -102,7 +102,7 @@
 	let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
-	colorscheme grb256			" load a colorscheme
+	colorscheme lucius			" load a colorscheme
 " }
 
 " Key Mappings {
