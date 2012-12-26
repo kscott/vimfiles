@@ -247,6 +247,23 @@
 	" JSHint
 	let lint_highlight_color = "LightSteelBlue"
 
+	" DBGp
+	map <leader>1 :python debugger_resize()<cr>
+	map <leader>2 :python debugger_command('step_into')<cr>
+	map <leader>3 :python debugger_command('step_over')<cr>
+	map <leader>4 :python debugger_command('step_out')<cr>
+	map <leader>5 :python debugger_run()<cr>
+	map <leader>6 :python debugger_quit()<cr>
+	map <leader>9 :python debugger_context()<cr>
+	map <leader>0 :python debugger_property()<cr>
+	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
+	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+	map <leader>b :Bp<cr>
+	" setup gdbp settings
+	let g:debuggerMaxChildren = 128
+	let g:debuggerMaxData = 8192
+	let g:debuggerMaxDepth = 100
+	
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
