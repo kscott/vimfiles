@@ -259,10 +259,11 @@
 	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
+
 	" setup gdbp settings
-	let g:debuggerMaxChildren = 128
+	let g:debuggerMaxChildren = 2048
 	let g:debuggerMaxData = 8192
-	let g:debuggerMaxDepth = 100
+	let g:debuggerMaxDepth = 10
 	
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
