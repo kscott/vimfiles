@@ -1,4 +1,4 @@
-" Last Modified: Tue Jan 31 21:32:49 2012 MST
+" Last Modified: Thu Dec 27 09:31:12 2012 MST 
 "
 " Basics {
 	set nocompatible		" must be first line
@@ -107,12 +107,6 @@
 
 " Key Mappings {
 	map Q gq
-	map <leader>ga :CommandTFlush<cr>\|:CommandT ~/CCB/src/app<cr>
-	map <leader>gr :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources<cr>
-	map <leader>gj :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources/js<cr>
-	map <leader>gc :CommandTFlush<cr>\|:CommandT ~/CCB/src/resources/css<cr>
-	map <leader>gb :CommandTFlush<cr>\|:CommandT ~/CCB/src/bbt<cr>
-
 	nnoremap <leader><leader> <c-^>
 
 	" Easier moving in tabs and windows
@@ -224,6 +218,7 @@
 	let g:sqlutil_wrap_expressions = 1
 
 	" Custom mapping for Ack Plugin
+	let g:ackprg = 'ag --nogroup --nocolor --column'
 	map <D-F> :Ack<space>
 	map <leader>a :Ack!
 
@@ -238,13 +233,13 @@
 	xmap <D-/> <Plug>Commentary
 
 	" Syntastic
-	let g:syntastic_auto_jump=1
+	"let g:syntastic_auto_jump=1
 	let g:syntastic_auto_loc_list=1
 
 	" Itchy
 	nmap <Leader>s :Scratch<CR>
 
-	" JSHint
+	" Lint
 	let lint_highlight_color = "LightSteelBlue"
 
 	" DBGp
@@ -264,6 +259,7 @@
 	let g:debuggerMaxChildren = 2048
 	let g:debuggerMaxData = 8192
 	let g:debuggerMaxDepth = 10
+	let g:debuggerDisableDefaultMappings = 1
 	
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
