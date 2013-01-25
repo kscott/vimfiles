@@ -9,7 +9,8 @@ set background=light
 
 set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 set background=light
-colorscheme solarized
+" colorscheme solarized
+colorscheme lucius
 
 if exists("+antialias")
 	set antialias

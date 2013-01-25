@@ -223,7 +223,7 @@
 	map <leader>a :Ack!
 
 	" ZoomWin configuration
-	map <Leader>z :ZoomWin<CR>
+	map <leader>z :ZoomWin<CR>
 
 	let g:LustyExplorerSuppressRubyWarning = 1
 	let g:LustyJugglerSuppressRubyWarning = 1
@@ -237,24 +237,25 @@
 	let g:syntastic_auto_loc_list=1
 
 	" Itchy
-	nmap <Leader>s :Scratch<CR>
+	nmap <leader>s :Scratch<CR>
 
 	" Lint
-	let lint_highlight_color = "LightSteelBlue"
+	let lint_highlight_color = "#dadada"
 
 	" DBGp
 	map <leader>1 :python debugger_resize()<cr>
-	map <leader>2 :python debugger_command('step_into')<cr>
-	map <leader>3 :python debugger_command('step_over')<cr>
 	map <leader>4 :python debugger_command('step_out')<cr>
 	map <leader>5 :python debugger_run()<cr>
 	map <leader>6 :python debugger_quit()<cr>
+	map <leader>7 :python debugger_command('step_into')<cr>
+	map <leader>8 :python debugger_command('step_over')<cr>
 	map <leader>9 :python debugger_context()<cr>
 	map <leader>0 :python debugger_property()<cr>
 	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
-
+	map <leader>e :python debugger_watch_input("eval")<cr>A
+ 	
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
 	let g:debuggerMaxData = 8192
