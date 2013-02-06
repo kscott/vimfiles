@@ -100,3 +100,9 @@
 [submodule "vim/bundle/DBGp-Remote-Debugger-Interface"]
 	path = vim/bundle/DBGp-Remote-Debugger-Interface
 	url = https://github.com/jaredcobb/DBGp-Remote-Debugger-Interface.git
+[submodule "vim/bundle/MatchTagAlways"]
+	path = vim/bundle/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule "vim/bundle/ListToggle"]
+	path = vim/bundle/ListToggle
+	url = https://github.com/Valloric/ListToggle.git

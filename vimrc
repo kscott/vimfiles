@@ -73,7 +73,7 @@
 	set noequalalways				" don't resize windows on splits
 	set noexpandtab					" tabs are tabs, not spaces
 	set nowrap						" wrap long lines
-	set number						" Line numbers on
+	set relativenumber				" Relative line numbers on
 	set scrolljump=5				" lines to scroll when cursor leaves screen
 	set scrolloff=3					" minimum lines to keep above and below cursor
 	set secure						" just in case...
@@ -165,6 +165,8 @@
 
 " Autocommands {
 	if has("autocmd")
+		autocmd BufEnter * set relativenumber
+
 		autocmd BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		autocmd BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 

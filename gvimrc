@@ -5,7 +5,6 @@ set columns=125
 set guioptions-=T
 set lines=50
 set printoptions=syntax:y,paper:letter
-set background=light
 
 set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 set background=light
