@@ -73,7 +73,7 @@
 	set noequalalways				" don't resize windows on splits
 	set noexpandtab					" tabs are tabs, not spaces
 	set nowrap						" wrap long lines
-	set relativenumber				" Relative line numbers on
+	set number				        " Line numbers on
 	set scrolljump=5				" lines to scroll when cursor leaves screen
 	set scrolloff=3					" minimum lines to keep above and below cursor
 	set secure						" just in case...
@@ -95,7 +95,7 @@
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
 	set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
 	set winminheight=0				" windows can be 0 characters wide
-	set winminheight=0				" windows can be 0 line high 
+	set winminheight=0				" windows can be 0 line high
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
 
@@ -147,7 +147,8 @@
 
 	" Shortcuts
 	" Change Working Directory to that of the current file
-	cmap cwd lcd %:p:h
+	noremap <silent><leader>cd :cd %:p:h<cr>
+	noremap <leader>e :e %:h
 
 	nnoremap <D-S-Down> :m+<CR>==
 	nnoremap <D-S-Up> :m-2<CR>==
@@ -155,6 +156,10 @@
 	inoremap <D-S-Up> <Esc>:m-2<CR>==gi
 	vnoremap <D-S-Down> :m'>+<CR>gv=gv
 	vnoremap <D-S-Up> :m-2<CR>gv=gv
+
+	" This command will allow us to save a file we don't have permission to save
+	" *after* we have already opened it. Super useful.
+	cnoremap w!! w !sudo tee % >/dev/null
 
 	map <F5> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 	\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -227,8 +232,13 @@
 	" ZoomWin configuration
 	map <leader>z :ZoomWin<CR>
 
+	" Lusty
 	let g:LustyExplorerSuppressRubyWarning = 1
 	let g:LustyJugglerSuppressRubyWarning = 1
+	let g:LustyJugglerDefaultMappings = 0
+	let g:LustyJugglerAltTabMode = 1
+	nmap <silent> <Leader>j :LustyJuggler<CR>
+	noremap <silent> <A-s> :LustyJuggler<CR>
 
 	" Commentary
 	nmap <D-/> <Plug>CommentaryLine
@@ -237,6 +247,8 @@
 	" Syntastic
 	"let g:syntastic_auto_jump=1
 	let g:syntastic_auto_loc_list=1
+	let g:syntastic_error_symbol = '✗'
+	let g:syntastic_warning_symbol = '⚠'
 
 	" Itchy
 	nmap <leader>s :Scratch<CR>
@@ -256,7 +268,7 @@
 	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
-	map <leader>e :python debugger_watch_input("eval")<cr>A
+	" map <leader>e :python debugger_watch_input("eval")<cr>A
  	
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
@@ -264,7 +276,23 @@
 	let g:debuggerMaxDepth = 10
 	let g:debuggerDisableDefaultMappings = 1
 	
+	" vim-indent-guides
+	let g:indent_guides_enable_on_vim_startup = 1
+	let g:indent_guides_color_change_percent = 1
+	let g:indent_guides_start_level = 2
+
+	" MatchTagAlways
+	let g:mta_use_matchparen_group = 0
+
+" Custom highlighting
+	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
+	match ExtraWhitespace /\s\+$/
+	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+	autocmd BufWinLeave * call clearmatches()
 " Include user's local vim config
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif

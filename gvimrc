@@ -8,8 +8,6 @@ set printoptions=syntax:y,paper:letter
 
 set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 set background=light
-" colorscheme solarized
-colorscheme lucius
 
 if exists("+antialias")
 	set antialias
@@ -38,3 +36,11 @@ elseif has("mac")
 elseif has("linux")
 
 endif
+
+" Custom highlighting
+	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
+	match ExtraWhitespace /\s\+$/
+	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+	autocmd BufWinLeave * call clearmatches()
