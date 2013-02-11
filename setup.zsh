@@ -20,14 +20,17 @@ then
 	fi
 	ln -s $PWD/vimrc $HOME/.vimrc
 
+	if [[ -e $HOME/.vimrc.bundles ]];
+	then
+		rm $HOME/.vimrc.bundles
+	fi
+	ln -s $PWD/vimrc.bundles $HOME/.vimrc.bundles
+
 	if [[ -e $HOME/.gvimrc ]];
 	then
 		rm $HOME/.gvimrc
 	fi
 	ln -s $PWD/gvimrc $HOME/.gvimrc
-
-	git submodule init > /dev/null
-	git submodule update > /dev/null
 else
 	echo "Remove existing vim configuration files before running this script."
 fi
