@@ -1,16 +1,12 @@
-" Last Modified: Thu Dec 27 09:31:12 2012 MST 
-"
-" Basics {
-	set nocompatible		" must be first line
-" }
+set nocompatible
+filetype off
 
-" Setup Bundle Support {
-" The next two lines ensure that the ~/.vim/bundle/ system works
-	filetype off
-	runtime! autoload/pathogen.vim
-	silent! call pathogen#runtime_append_all_bundles()
-	silent! call pathogen#helptags()
-" }
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+if filereadable(expand("~/.vimrc.bundles"))
+	source ~/.vimrc.bundles
+endif
 
 " General {
 	filetype plugin indent on	" Automatically detect file types.
@@ -148,7 +144,6 @@
 	" Shortcuts
 	" Change Working Directory to that of the current file
 	noremap <silent><leader>cd :cd %:p:h<cr>
-	noremap <leader>e :e %:h
 
 	nnoremap <D-S-Down> :m+<CR>==
 	nnoremap <D-S-Up> :m-2<CR>==
@@ -170,8 +165,6 @@
 
 " Autocommands {
 	if has("autocmd")
-		autocmd BufEnter * set relativenumber
-
 		autocmd BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		autocmd BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 
@@ -255,6 +248,8 @@
 
 	" Lint
 	let lint_highlight_color = "#dadada"
+	let jshint_options_file = '~/.jshint.options.js'
+	let csslint_options_file = '~/.csslint.options.js'
 
 	" DBGp
 	map <leader>1 :python debugger_resize()<cr>
@@ -269,13 +264,13 @@
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
 	" map <leader>e :python debugger_watch_input("eval")<cr>A
- 	
+
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
 	let g:debuggerMaxData = 8192
 	let g:debuggerMaxDepth = 10
 	let g:debuggerDisableDefaultMappings = 1
-	
+
 	" vim-indent-guides
 	let g:indent_guides_enable_on_vim_startup = 1
 	let g:indent_guides_color_change_percent = 1
@@ -284,6 +279,9 @@
 	" MatchTagAlways
 	let g:mta_use_matchparen_group = 0
 
+	" vim-autoclose
+	let g:autoclose_vim_commentmode = 0
+
 " Custom highlighting
 	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
 	match ExtraWhitespace /\s\+$/
@@ -291,8 +289,8 @@
 	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 	autocmd BufWinLeave * call clearmatches()
-" Include user's local vim config
 
+" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
