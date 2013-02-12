@@ -6,6 +6,8 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'Lokaltog/vim-powerline'
+
 Bundle 'epmatsw/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mbbill/undotree'
