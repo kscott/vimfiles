@@ -1,9 +1,6 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 if filereadable(expand("~/.vimrc.bundles"))
 	source ~/.vimrc.bundles
 endif
@@ -267,7 +264,7 @@ endif
 	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
-	" map <leader>e :python debugger_watch_input("eval")<cr>A
+	map <leader>e :python debugger_watch_input("eval")<cr>A
 
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
