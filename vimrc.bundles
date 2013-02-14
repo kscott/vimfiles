@@ -17,8 +17,10 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'programble/itchy.vim'
 Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 
+Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'spf13/vim-autoclose'
 Bundle 'tpope/vim-commentary'
@@ -37,11 +39,15 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'Valloric/MatchTagAlways'
+
+Bundle 'itspriddle/vim-jquery'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'leshill/vim-json'
-Bundle 'nono/jquery.vim'
+"Bundle 'nono/jquery.vim'
 Bundle 'tpope/vim-haml'
-Bundle 'Valloric/MatchTagAlways'
 
 Bundle 'tpope/vim-markdown'
 
