@@ -33,7 +33,7 @@ then
 	ln -s $PWD/gvimrc $HOME/.gvimrc
 
 	git submodule update --init
-	vim -u vimrc.bundles +BundleInstall +q
+	vim -u vimrc.bundles +BundleInstall +qall!
 
 	if [[ -d vim/bundle/YouCompleteMe ]];
 	then
