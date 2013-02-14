@@ -31,6 +31,9 @@ then
 		rm $HOME/.gvimrc
 	fi
 	ln -s $PWD/gvimrc $HOME/.gvimrc
+
+	git submodules update --init
+	vim -u .vimrc.bundles +BundleInstall +q
 else
 	echo "Remove existing vim configuration files before running this script."
 fi

@@ -55,3 +55,4 @@ Bundle 'ZoomWin'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lucius'
 
+filetype plugin indent on
