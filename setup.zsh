@@ -34,6 +34,11 @@ then
 
 	git submodule update --init
 	vim -u vimrc.bundles +BundleInstall +q
+
+	if [[ -d vim/bundle/YouCompleteMe ]];
+	then
+		cd vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+	fi
 else
 	echo "Remove existing vim configuration files before running this script."
 fi
