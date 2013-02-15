@@ -245,12 +245,6 @@ endif
 	" Itchy
 	nmap <leader>s :Scratch<CR>
 
-	" Lint
-	let lint_highlight_color = "#dadada"
-	let jshint_options_file = '~/.jshint.options.js'
-	let csslint_options_file = '~/.csslint.options.js'
-	let disable_lint = 1
-
 	" Powerline
 	let g:Powerline_symbols = 'fancy'
 
