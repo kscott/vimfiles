@@ -43,11 +43,12 @@ Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'Valloric/MatchTagAlways'
 
-Bundle 'itspriddle/vim-jquery'
-Bundle 'jelera/vim-javascript-syntax'
+"Bundle 'itspriddle/vim-jquery'
+"Bundle 'jelera/vim-javascript-syntax'
 Bundle 'leshill/vim-json'
 "Bundle 'nono/jquery.vim'
 Bundle 'tpope/vim-haml'
+Bundle 'othree/javascript-libraries-syntax'
 
 Bundle 'tpope/vim-markdown'
 

@@ -165,9 +165,6 @@ endif
 		autocmd BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		autocmd BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 
-		au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-		autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
-
 		" PHP coding settings"
 		augroup PHP
 			autocmd!
@@ -282,6 +279,8 @@ endif
 	" Surround
 	let g:surround_35  = "#{\r}"   " ysiw# to wrap the token under cursor in #{}
 
+	" Javascript syntax
+	let g:used_javascript_libs = 'jquery,underscore,backbone'
 
 " Custom highlighting
 	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
