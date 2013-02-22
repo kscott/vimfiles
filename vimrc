@@ -5,6 +5,9 @@ if filereadable(expand("~/.vimrc.bundles"))
 	source ~/.vimrc.bundles
 endif
 
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+
 " General {
 	filetype plugin indent on	" Automatically detect file types.
 	syntax on					" syntax highlighting
@@ -241,9 +244,6 @@ endif
 
 	" Itchy
 	nmap <leader>s :Scratch<CR>
-
-	" Powerline
-	let g:Powerline_symbols = 'fancy'
 
 	" DBGp
 	map <leader>1 :python debugger_resize()<cr>
