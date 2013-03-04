@@ -40,6 +40,7 @@ Bundle 'spf13/PIV'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rbenv'
 Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'amirh/HTML-AutoCloseTag'
@@ -48,7 +49,7 @@ Bundle 'Valloric/MatchTagAlways'
 
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-haml'
-Bundle 'othree/javascript-libraries-syntax'
+Bundle 'othree/vim-javascript-syntax'
 
 Bundle 'tpope/vim-markdown'
 

@@ -31,7 +31,7 @@ elseif has("mac")
 	set guioptions-=b
 
 	"set guifont=Monaco:h14
-	set guifont=Monaco\ for\ Powerline:h14,Consolas:h15.00,Source\ Code\ Pro\ for\ Powerline:h14,Monaco:h14
+	set guifont=Consolas\ for\ Powerline:h15.00,Consolas:h15.00,Monaco:h14
 
 elseif has("linux")
 
@@ -44,3 +44,9 @@ endif
 	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 	autocmd BufWinLeave * call clearmatches()
+
+" Include user's local vim config
+if filereadable(expand("~/.gvimrc.local"))
+  source ~/.gvimrc.local
+endif
+

@@ -57,6 +57,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	endif
 	set cursorline					" highlight current line
 	set encoding=utf-8
+	set fillchars=vert:\ 			" Use a space to separate vertical splits
 	set grepprg=ack					" use ack instead of grep
 	set hidden
 	set history=1000				" Store a ton of history (default is 20)
@@ -161,6 +162,8 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 	nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+	command! Marked silent !open -a "Marked.app" "%:p"
+	nnoremap <leader>p :Marked<CR>
 " }
 
 " Autocommands {
@@ -239,7 +242,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	"let g:syntastic_auto_jump=1
 	let g:syntastic_auto_loc_list=1
 	let g:syntastic_error_symbol = '✗'
-	let g:syntastic_warning_symbol = '⚠'
+	let g:syntastic_warning_symbol = '⚑'
     let g:syntastic_check_on_open = 1
 
 	" Itchy
@@ -258,6 +261,10 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 	map <leader>b :Bp<cr>
 	map <leader>e :python debugger_watch_input("eval")<cr>A
+
+	let g:useCustomColors = 1
+	hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
+	hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
 
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
