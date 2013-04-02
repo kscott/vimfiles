@@ -263,7 +263,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	map <leader>e :python debugger_watch_input("eval")<cr>A
 
 	let g:useCustomColors = 1
-	hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
+	hi DbgCurrent term=reverse ctermfg=White ctermbg=Red guibg=#ffffaf
 	hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
 
 	" setup gdbp settings
@@ -288,6 +288,17 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 	" Javascript syntax
 	let g:used_javascript_libs = 'jquery,underscore,backbone'
+
+	let g:html_indent_inctags = "html,body,head,tbody"
+	let g:html_indent_script1 = "inc"
+	let g:html_indent_style1 = "inc"
+
+	" dbext profiles
+	let g:dbext_default_profile_ccb = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=ccb_dev;host=localhost'
+	let g:dbext_default_profile_ccbcompany = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=ccbcompany;host=localhost'
+	let g:dbext_default_profile_bbt = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=bbt;host=localhost'
+
+	let g:dbext_default_profile = 'ccb'
 
 " Custom highlighting
 	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red

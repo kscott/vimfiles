@@ -35,6 +35,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
 Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
+Bundle 'joonty/vim-phpunitqf'
 Bundle 'spf13/PIV'
 
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -55,6 +56,7 @@ Bundle 'tpope/vim-markdown'
 
 Bundle 'Align'
 Bundle 'argtextobj.vim'
+Bundle 'dbext.vim'
 Bundle 'matchit.zip'
 Bundle 'restore_view.vim'
 Bundle 'SQLUtilities'
@@ -62,5 +64,6 @@ Bundle 'ZoomWin'
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lucius'
+Bundle 'chriskempson/base16-vim'
 
 filetype plugin indent on
