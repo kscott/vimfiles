@@ -5,7 +5,7 @@ if filereadable(expand("~/.vimrc.bundles"))
 	source ~/.vimrc.bundles
 endif
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 
 " General {
@@ -43,7 +43,24 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 	if has('statusline')
 		set laststatus=2			" always show statusline
-		set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %=%-14.(%l,%c%V%)\ %P
+		" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
+
+		set statusline=%n:\ "
+		set statusline+=%1*%-25.80f%*\ " file name minimum 25, maxiumum 80 (right justified)
+		set statusline+=%2*
+		set statusline+=%h "help file flag
+		set statusline+=%r "read only flag
+		set statusline+=%m "modified flag
+		set statusline+=%w "preview flag
+		set statusline+=%*\ "
+		set statusline+=%3*[
+		set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+		set statusline+=]%*\ "
+		set statusline+=%4*%{fugitive#statusline()}%*\ " Fugitive
+		set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
+		set statusline+=%= " right align
+		set statusline+=%8*%-14.(%l:%v%)\ %<%P%* " offset
+
 	endif
 
 	let mapleader=","
@@ -240,10 +257,12 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 	" Syntastic
 	"let g:syntastic_auto_jump=1
-	let g:syntastic_auto_loc_list=1
+	let g:syntastic_auto_loc_list = 1
 	let g:syntastic_error_symbol = '✗'
 	let g:syntastic_warning_symbol = '⚑'
     let g:syntastic_check_on_open = 1
+
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': [] }
 
 	" Itchy
 	nmap <leader>s :Scratch<CR>
@@ -263,8 +282,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 	map <leader>e :python debugger_watch_input("eval")<cr>A
 
 	let g:useCustomColors = 1
-	hi DbgCurrent term=reverse ctermfg=White ctermbg=Red guibg=#ffffaf
-	hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
 
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048

@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/powerline'
+"Bundle 'Lokaltog/powerline'
 
 Bundle 'mbbill/undotree'
 Bundle 'Valloric/ListToggle'
@@ -44,7 +44,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rbenv'
 Bundle 'vim-ruby/vim-ruby'
 
-Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'Valloric/MatchTagAlways'
 
