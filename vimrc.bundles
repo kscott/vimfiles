@@ -37,6 +37,7 @@ Bundle 'tpope/vim-git'
 Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
 Bundle 'joonty/vim-phpunitqf'
 Bundle 'spf13/PIV'
+Bundle 'stephpy/vim-php-cs-fixer'
 
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-cucumber'
