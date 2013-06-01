@@ -264,7 +264,7 @@ endif
 	let g:syntastic_style_warning_symbol = '☯'
     let g:syntastic_check_on_open = 1
 
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': [] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['css'] }
 	let g:syntastic_php_checkers=['php', 'phpcs']
 
 	" PHP CS Fixer

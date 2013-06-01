@@ -29,7 +29,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'spf13/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/vim-indent-guides'
 
 Bundle 'tpope/vim-fugitive'
