@@ -45,21 +45,21 @@ endif
 		set laststatus=2			" always show statusline
 		" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
 
-		set statusline=%n:\ "
-		set statusline+=%1*%-25.80f%*\ " file name minimum 25, maxiumum 80 (right justified)
+		set statusline=%3*%02n\  " Buffer number
+		set statusline+=%1*%-15.80f\ %* " file name minimum 15, maxiumum 80 (right justified)
+		set statusline+=%3*[
+		set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+		set statusline+=]%*
 		set statusline+=%2*
 		set statusline+=%h "help file flag
 		set statusline+=%r "read only flag
 		set statusline+=%m "modified flag
 		set statusline+=%w "preview flag
-		set statusline+=%*\ "
-		set statusline+=%3*[
-		set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-		set statusline+=]%*\ "
-		set statusline+=%4*%{fugitive#statusline()}%*\ " Fugitive
+		set statusline+=%*
+		set statusline+=%4*%{fugitive#statusline()}%* " Fugitive
 		set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
 		set statusline+=%= " right align
-		set statusline+=%8*%-14.(%l:%v%)\ %<%P%* " offset
+		set statusline+=%8*%-10.(%l:%v%)\ %<%P%* " offset
 
 	endif
 
@@ -198,6 +198,12 @@ endif
 		augroup Ruby
 			autocmd!
 			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+		augroup END
+
+		" Ruby coding settings"
+		augroup Sass
+			autocmd!
+			autocmd FileType scss setlocal nobackup nowritebackup noswapfile autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
 		augroup END
 
 		" Cucumber coding settings"
