@@ -233,6 +233,26 @@ endif
 " }
 
 " Plugin Settings {
+	" vim-airline
+	" unicode symbols
+	let g:airline_left_sep = ''
+"	let g:airline_left_sep = '»'
+"	let g:airline_left_sep = '▶'
+	let g:airline_right_sep = ''
+"	let g:airline_right_sep = '«'
+"	let g:airline_right_sep = '◀'
+"	let g:airline_linecolumn_prefix = '␊ '
+"	let g:airline_linecolumn_prefix = '␤ '
+	let g:airline_linecolumn_prefix = '¶ '
+	let g:airline_fugitive_prefix = '⎇ '
+"	let g:airline_paste_symbol = 'ρ'
+"	let g:airline_paste_symbol = 'Þ'
+"	let g:airline_paste_symbol = '∥'
+	let g:airline_modified_detection=1
+	let g:airline_enable_fugitive=1
+	let g:airline_enable_syntastic=1
+	let g:airline_theme='light'
+
 	" SQL Utilities
 	let g:sqlutil_align_comma = 1
 	let g:sqlutil_cmd_terminator = ';'
@@ -242,7 +262,6 @@ endif
 	let g:sqlutil_wrap_expressions = 1
 
 	" Custom mapping for Ack Plugin
-	let g:ackprg = 'ag --nogroup --nocolor --column'
 	map <D-F> :Ack<space>
 	map <leader>a :Ack!
 
