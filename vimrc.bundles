@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'mbbill/undotree'
 Bundle 'Valloric/ListToggle'
 
+Bundle 'blink/vim-airline'
 Bundle 'epmatsw/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
@@ -52,6 +53,7 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-haml'
 Bundle 'othree/vim-javascript-syntax'
+Bundle "pangloss/vim-javascript"
 
 Bundle 'tpope/vim-markdown'
 
