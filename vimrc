@@ -41,27 +41,27 @@ endif
 		set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 	endif
 
-	if has('statusline')
-		set laststatus=2			" always show statusline
-		" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
+	" if has('statusline')
+	" 	set laststatus=2			" always show statusline
+	" 	" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
 
-		set statusline=%3*%02n\  " Buffer number
-		set statusline+=%1*%-15.80f\ %* " file name minimum 15, maxiumum 80 (right justified)
-		set statusline+=%3*[
-		set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-		set statusline+=]%*
-		set statusline+=%2*
-		set statusline+=%h "help file flag
-		set statusline+=%r "read only flag
-		set statusline+=%m "modified flag
-		set statusline+=%w "preview flag
-		set statusline+=%*
-		set statusline+=%4*%{fugitive#statusline()}%* " Fugitive
-		set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
-		set statusline+=%= " right align
-		set statusline+=%8*%-10.(%l:%v%)\ %<%P%* " offset
+	" 	set statusline=%3*%02n\  " Buffer number
+	" 	set statusline+=%1*%-15.80f\ %* " file name minimum 15, maxiumum 80 (right justified)
+	" 	set statusline+=%3*[
+	" 	set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+	" 	set statusline+=]%*
+	" 	set statusline+=%2*
+	" 	set statusline+=%h "help file flag
+	" 	set statusline+=%r "read only flag
+	" 	set statusline+=%m "modified flag
+	" 	set statusline+=%w "preview flag
+	" 	set statusline+=%*
+	" 	set statusline+=%4*%{fugitive#statusline()}%* " Fugitive
+	" 	set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
+	" 	set statusline+=%= " right align
+	" 	set statusline+=%8*%-10.(%l:%v%)\ %<%P%* " offset
 
-	endif
+	" endif
 
 	let mapleader=","
 	let maplocalleader="\\"
@@ -81,6 +81,7 @@ endif
 	set hlsearch					" highlight search terms
 	set ignorecase					" case insensitive search
 	set incsearch					" find as you type search
+	set laststatus=2				" always show status line
 	set linespace=0					" No extra spaces between rows
 	set nolist
 	set mouse=a						" automatically enable mouse usage
@@ -243,7 +244,7 @@ endif
 "	let g:airline_right_sep = '◀'
 "	let g:airline_linecolumn_prefix = '␊ '
 "	let g:airline_linecolumn_prefix = '␤ '
-	let g:airline_linecolumn_prefix = '¶ '
+	let g:airline_linecolumn_prefix = '¶'
 	let g:airline_fugitive_prefix = '⎇ '
 "	let g:airline_paste_symbol = 'ρ'
 "	let g:airline_paste_symbol = 'Þ'
@@ -251,15 +252,22 @@ endif
 	let g:airline_modified_detection=1
 	let g:airline_enable_fugitive=1
 	let g:airline_enable_syntastic=1
-	let g:airline_theme='light'
+	let g:airline_enable_bufferline=1
+	let g:airline_theme='solarized'
+	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
 
 	" SQL Utilities
+	let g:sqlutil_align_where = 1
 	let g:sqlutil_align_comma = 1
 	let g:sqlutil_cmd_terminator = ';'
 	let g:sqlutil_default_menu_mode = 0
 	let g:sqlutil_keyword_case = '\U'
 	let g:sqlutil_align_first_word = 1
 	let g:sqlutil_wrap_expressions = 1
+	let g:sqlutil_split_unbalanced_paran = 1
+	let g:sqlutil_indent_nested_blocks = 1
+	let g:sqlutil_non_line_break_keywords = 'as,like,desc,asc'
+	let g:sqlutil_stmt_keywords = 'select,insert,update,delete,with,merge,case,when,else,join'
 
 	" Custom mapping for Ack Plugin
 	map <D-F> :Ack<space>
