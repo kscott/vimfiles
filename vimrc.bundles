@@ -6,8 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-"Bundle 'Lokaltog/powerline'
-
 Bundle 'mbbill/undotree'
 Bundle 'Valloric/ListToggle'
 
@@ -31,7 +29,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'spf13/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/vim-indent-guides'
 
 Bundle 'tpope/vim-fugitive'
@@ -41,6 +38,7 @@ Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
 Bundle 'joonty/vim-phpunitqf'
 Bundle 'spf13/PIV'
 Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'techlivezheng/vim-plugin-tagbar-phpctags'
 
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-cucumber'
@@ -67,7 +65,7 @@ Bundle 'SQLUtilities'
 Bundle 'ZoomWin'
 
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lucius'
+Bundle 'jonathanfilip/vim-lucius'
 Bundle 'chriskempson/base16-vim'
 
 filetype plugin indent on

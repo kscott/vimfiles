@@ -5,9 +5,6 @@ if filereadable(expand("~/.vimrc.bundles"))
 	source ~/.vimrc.bundles
 endif
 
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-
 " General {
 	filetype plugin indent on	" Automatically detect file types.
 	syntax on					" syntax highlighting
@@ -105,6 +102,7 @@ endif
 	set tabstop=4					" an indentation every four columns
 	set tags=./tmtags,tmtags,./tags,tags;$HOME
 	set tildeop						" make the tilde key act as an operator
+	set ttimeoutlen=50
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	"set wildmenu					" show list instead of just completing
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
@@ -242,21 +240,19 @@ endif
 	let g:airline_right_sep = ''
 "	let g:airline_right_sep = '«'
 "	let g:airline_right_sep = '◀'
-"	let g:airline_linecolumn_prefix = '␊ '
-"	let g:airline_linecolumn_prefix = '␤ '
 	let g:airline_linecolumn_prefix = '¶'
-	let g:airline_fugitive_prefix = '⎇ '
-"	let g:airline_paste_symbol = 'ρ'
-"	let g:airline_paste_symbol = 'Þ'
-"	let g:airline_paste_symbol = '∥'
+	let g:airline_branch_prefix = '⎇ '
+	let g:airline_paste_symbol = '◉'
 	let g:airline_modified_detection=1
-	let g:airline_enable_fugitive=1
+	let g:airline_enable_branch=1
 	let g:airline_enable_syntastic=1
-	let g:airline_enable_bufferline=1
-	let g:airline_theme='solarized'
+	let g:airline_enable_bufferline=0
+	let g:airline_theme='luna'
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
 
-	" SQL Utilities
+	let g:bufferline_echo = 0
+
+" SQL Utilities
 	let g:sqlutil_align_where = 1
 	let g:sqlutil_align_comma = 1
 	let g:sqlutil_cmd_terminator = ';'
@@ -349,6 +345,9 @@ endif
 
 	" Surround
 	let g:surround_35  = "#{\r}"   " ysiw# to wrap the token under cursor in #{}
+
+	" Tagbar
+	let g:tagbar_type_markdown = { 'ctagstype' : 'markdown', 'kinds' : [ 'h:Heading_L1', 'i:Heading_L2', 'k:Heading_L3' ] }
 
 	" Javascript syntax
 	let g:used_javascript_libs = 'jquery,underscore,backbone'
