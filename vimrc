@@ -240,9 +240,9 @@ endif
 	let g:airline_right_sep = ''
 "	let g:airline_right_sep = '«'
 "	let g:airline_right_sep = '◀'
-	let g:airline_linecolumn_prefix = '¶'
 	let g:airline_branch_prefix = '⎇ '
 	let g:airline_paste_symbol = '◉'
+	let g:airline_linecolumn_prefix = '§'
 	let g:airline_modified_detection=1
 	let g:airline_enable_branch=1
 	let g:airline_enable_syntastic=1
@@ -252,7 +252,7 @@ endif
 
 	let g:bufferline_echo = 0
 
-" SQL Utilities
+	" SQL Utilities
 	let g:sqlutil_align_where = 1
 	let g:sqlutil_align_comma = 1
 	let g:sqlutil_cmd_terminator = ';'
