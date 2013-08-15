@@ -247,7 +247,7 @@ endif
 	let g:airline_enable_branch=1
 	let g:airline_enable_syntastic=1
 	let g:airline_enable_bufferline=0
-	let g:airline_theme='luna'
+	let g:airline_theme='bubblegum'
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
 
 	let g:bufferline_echo = 0
