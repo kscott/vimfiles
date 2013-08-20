@@ -242,6 +242,7 @@ endif
 "	let g:airline_right_sep = '◀'
 	let g:airline_branch_prefix = '⎇ '
 	let g:airline_paste_symbol = '◉'
+	let g:airline#extensions#readonly#symbol = '✖'
 	let g:airline_linecolumn_prefix = '§'
 	let g:airline_modified_detection=1
 	let g:airline_enable_branch=1
