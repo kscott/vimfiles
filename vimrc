@@ -250,7 +250,7 @@ endif
 	let g:airline_enable_bufferline=0
 	let g:airline_inactive_collapse=0
 	let g:airline_detect_whitespace=0
-	let g:airline_theme='bubblegum'
+	let g:airline_theme='serene'
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
 
 	let g:bufferline_echo = 0
