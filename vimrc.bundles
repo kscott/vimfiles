@@ -30,6 +30,8 @@ Bundle 'spf13/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/vim-indent-guides'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
