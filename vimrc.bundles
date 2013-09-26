@@ -23,6 +23,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'robmiller/vim-movar'
 Bundle 'scrooloose/syntastic'

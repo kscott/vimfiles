@@ -131,19 +131,6 @@ endif
 	" GRB: clear the search buffer when hitting return
 	:nnoremap <CR> :nohlsearch<CR>/<BS>
 
-	" Remap the tab key to do autocompletion or indentation depending on the
-	" context (from http://www.vim.org/tips/tip.php?tip_id=102)
-	function! InsertTabWrapper()
-		let col = col('.') - 1
-		if !col || getline('.')[col - 1] !~ '\k'
-			return "\<tab>"
-		else
-			return "\<c-p>"
-		endif
-	endfunction
-	inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-	inoremap <s-tab> <c-n>
-
 	" Let tab key in visual mode change the indent level of the selection
 	vnoremap <Tab> >gv
 	vnoremap <S-Tab> <gv
@@ -254,6 +241,10 @@ endif
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
 
 	let g:bufferline_echo = 0
+
+	" Supertab
+	let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+	let g:SuperTabClosePreviewOnPopupClose = 1
 
 	" SQL Utilities
 	let g:sqlutil_align_where = 1
