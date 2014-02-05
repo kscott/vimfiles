@@ -6,7 +6,6 @@ set guioptions-=T
 set lines=50
 set printoptions=syntax:y,paper:letter
 
-set list listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 set background=light
 
 if exists("+antialias")
@@ -32,18 +31,16 @@ elseif has("mac")
 
 	"set guifont=Monaco:h14
 	set guifont=Consolas:h15.00,Source\ Code\ Pro:h15,Monaco:h14
+	colorscheme lucius
+
+	" vim-indent-guides
+	let g:indent_guides_enable_on_vim_startup = 0
+	let g:indent_guides_color_change_percent = 1
+	let g:indent_guides_start_level = 2
 
 elseif has("linux")
 
 endif
-
-" Custom highlighting
-	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
-	match ExtraWhitespace /\s\+$/
-	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-	autocmd BufWinLeave * call clearmatches()
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))

@@ -81,6 +81,7 @@ endif
 	set laststatus=2				" always show status line
 	set linespace=0					" No extra spaces between rows
 	set nolist
+    set listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
 	set mouse=a						" automatically enable mouse usage
 	set noequalalways				" don't resize windows on splits
 	set noexpandtab					" tabs are tabs, not spaces
@@ -115,12 +116,12 @@ endif
 	let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
-	colorscheme lucius			" load a colorscheme
+	colorscheme base16-chalk			" load a colorscheme
 " }
 
 " Key Mappings {
 	map Q gq
-	nnoremap <leader><leader> <c-^>
+	nnoremap <leader><leader> :LustyJugglePrevious<CR>
 
 	" Easier moving in tabs and windows
 	map <C-J> <C-W>j
@@ -178,6 +179,12 @@ endif
 		augroup PHP
 			autocmd!
 			autocmd FileType php setlocal autoindent tabstop=4 shiftwidth=4 softtabstop=4 smarttab noexpandtab formatoptions=croq commentstring=//\ %s
+		augroup END
+
+		" Javascript coding settings"
+		augroup Javascript
+			autocmd!
+			autocmd FileType javascript setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
 		augroup END
 
 		" Ruby coding settings"
@@ -238,7 +245,7 @@ endif
 	let g:airline_inactive_collapse=0
 	let g:airline_detect_whitespace=0
 	let g:airline_theme='serene'
-	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%c%)'
+	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%v%)'
 
 	let g:bufferline_echo = 0
 
@@ -271,6 +278,7 @@ endif
 	let g:LustyJugglerSuppressRubyWarning = 1
 	let g:LustyJugglerDefaultMappings = 0
 	let g:LustyJugglerAltTabMode = 1
+	let g:LustyJugglerShowKeys = 'a'
 	nmap <silent> <Leader>j :LustyJuggler<CR>
 	noremap <silent> <A-s> :LustyJuggler<CR>
 
@@ -326,11 +334,6 @@ endif
 	let g:debuggerMaxDepth = 10
 	let g:debuggerDisableDefaultMappings = 1
 
-	" vim-indent-guides
-	let g:indent_guides_enable_on_vim_startup = 1
-	let g:indent_guides_color_change_percent = 1
-	let g:indent_guides_start_level = 2
-
 	" MatchTagAlways
 	let g:mta_use_matchparen_group = 0
 
@@ -357,7 +360,7 @@ endif
 
 	let g:dbext_default_profile = 'ccb'
 
-" Custom highlighting
+	" Custom highlighting
 	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
 	match ExtraWhitespace /\s\+$/
 	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
