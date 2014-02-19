@@ -139,10 +139,6 @@ endif
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	nnoremap Y y$
 
-	" Enable Very Magic for search/replace
-	nnoremap / /\v
-	vnoremap / /\v
-
 	" Open tag definitions in a vertical split
 	map <D-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -182,10 +178,10 @@ endif
 		augroup END
 
 		" Javascript coding settings"
-		augroup Javascript
-			autocmd!
-			autocmd FileType javascript setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-		augroup END
+		" augroup Javascript
+		" 	autocmd!
+		" 	autocmd FileType javascript setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+		" augroup END
 
 		" Ruby coding settings"
 		augroup Ruby
@@ -193,7 +189,7 @@ endif
 			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
 		augroup END
 
-		" Ruby coding settings"
+		" Sass coding settings"
 		augroup Sass
 			autocmd!
 			autocmd FileType scss setlocal nobackup nowritebackup noswapfile autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
@@ -266,10 +262,6 @@ endif
 	let g:sqlutil_non_line_break_keywords = 'as,like,desc,asc'
 	let g:sqlutil_stmt_keywords = 'select,insert,update,delete,with,merge,case,when,else,join'
 
-	" Custom mapping for Ack Plugin
-	map <D-F> :Ack<space>
-	map <leader>a :Ack!
-
 	" ZoomWin configuration
 	map <leader>z :ZoomWin<CR>
 
@@ -334,12 +326,6 @@ endif
 	let g:debuggerMaxDepth = 10
 	let g:debuggerDisableDefaultMappings = 1
 
-	" MatchTagAlways
-	let g:mta_use_matchparen_group = 0
-
-	" vim-autoclose
-	let g:autoclose_vim_commentmode = 0
-
 	" Surround
 	let g:surround_35  = "#{\r}"   " ysiw# to wrap the token under cursor in #{}
 
@@ -359,14 +345,6 @@ endif
 	let g:dbext_default_profile_bbt = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=bbt;host=localhost'
 
 	let g:dbext_default_profile = 'ccb'
-
-	" Custom highlighting
-	highlight ExtraWhitespace ctermfg=yellow ctermbg=red guifg=yellow guibg=red
-	match ExtraWhitespace /\s\+$/
-	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-	autocmd BufWinLeave * call clearmatches()
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

@@ -11,7 +11,6 @@ Bundle 'Valloric/ListToggle'
 
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'myusuf3/numbers.vim'
 Bundle 'programble/itchy.vim'
 Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-abolish'
@@ -21,11 +20,13 @@ Bundle 'tpope/vim-speeddating'
 
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'robmiller/vim-movar'
 Bundle 'scrooloose/syntastic'
+Bundle 'sdanielf/vim-stdtabs'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
-Bundle 'Valloric/vim-indent-guides'
+" Bundle 'Valloric/vim-indent-guides'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 
@@ -43,14 +44,14 @@ Bundle 'tpope/vim-rbenv'
 Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'Valloric/MatchTagAlways'
+" Bundle 'Valloric/MatchTagAlways'
 
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-haml'
 Bundle 'othree/vim-javascript-syntax'
-Bundle "pangloss/vim-javascript"
+Bundle 'pangloss/vim-javascript'
 
-Bundle 'tpope/vim-markdown'
+" Bundle 'tpope/vim-markdown'
 
 Bundle 'Align'
 Bundle 'matchit.zip'
