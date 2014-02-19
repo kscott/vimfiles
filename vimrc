@@ -38,27 +38,27 @@ endif
 		set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 	endif
 
-	" if has('statusline')
-	" 	set laststatus=2			" always show statusline
-	" 	" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
+	if has('statusline')
+		set laststatus=2			" always show statusline
+		" set statusline=%n:\ %<%f\ %h%m%r\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}\ %=%-14.(%l,%c%V%)\ %P
 
-	" 	set statusline=%3*%02n\  " Buffer number
-	" 	set statusline+=%1*%-15.80f\ %* " file name minimum 15, maxiumum 80 (right justified)
-	" 	set statusline+=%3*[
-	" 	set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-	" 	set statusline+=]%*
-	" 	set statusline+=%2*
-	" 	set statusline+=%h "help file flag
-	" 	set statusline+=%r "read only flag
-	" 	set statusline+=%m "modified flag
-	" 	set statusline+=%w "preview flag
-	" 	set statusline+=%*
-	" 	set statusline+=%4*%{fugitive#statusline()}%* " Fugitive
-	" 	set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
-	" 	set statusline+=%= " right align
-	" 	set statusline+=%8*%-10.(%l:%v%)\ %<%P%* " offset
+		set statusline=%3*%02n\  " Buffer number
+		set statusline+=%1*%-15.80f\ %* " file name minimum 15, maxiumum 80 (right justified)
+		set statusline+=%3*[
+		set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+		set statusline+=]%*
+		set statusline+=%2*
+		set statusline+=%h "help file flag
+		set statusline+=%r "read only flag
+		set statusline+=%m "modified flag
+		set statusline+=%w "preview flag
+		set statusline+=%*
+		set statusline+=%4*%{fugitive#statusline()}%* " Fugitive
+		set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
+		set statusline+=%= " right align
+		set statusline+=%8*%-10.(%l:%v%)\ %<%P%* " offset
 
-	" endif
+	endif
 
 	let mapleader=","
 	let maplocalleader="\\"
@@ -95,6 +95,7 @@ endif
 	set shortmess+=filmnrxoOtT		" abbrev. of messages (avoids 'hit enter')
 	set showcmd						" show partial commands in status line and selected characters/lines in visual mode
 	set cmdheight=1
+	set relativenumber
 	set showmatch					" show matching brackets/parenthesis
 	set showmode					" display the current mode
 	set smartcase					" case sensitive when uc present
@@ -113,7 +114,7 @@ endif
 
 	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
 
-	let g:solarized_visibility = "low"
+	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
 	colorscheme base16-chalk			" load a colorscheme
@@ -299,7 +300,6 @@ endif
 	let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
 	let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
 	let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
-
 
 	" Itchy
 	nmap <leader>s :Scratch<CR>
