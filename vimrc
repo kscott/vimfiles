@@ -117,7 +117,8 @@ endif
 	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
-	colorscheme base16-chalk			" load a colorscheme
+	let g:zenburn_high_Contrast=1
+	colorscheme zenburn			" load a colorscheme
 " }
 
 " Key Mappings {
@@ -241,7 +242,7 @@ endif
 	let g:airline_enable_bufferline=0
 	let g:airline_inactive_collapse=0
 	let g:airline_detect_whitespace=0
-	let g:airline_theme='serene'
+	let g:airline_theme='zenburn'
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%v%)'
 
 	let g:bufferline_echo = 0
