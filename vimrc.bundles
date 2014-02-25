@@ -62,6 +62,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'chriskempson/base16-vim'
 Bundle 'baskerville/bubblegum'
+Bundle 'nanotech/jellybeans.vim'
 Bundle 'Zenburn'
 
 filetype plugin indent on
