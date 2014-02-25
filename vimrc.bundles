@@ -19,6 +19,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'robmiller/vim-movar'
@@ -29,6 +30,11 @@ Bundle 'tpope/vim-surround'
 " Bundle 'Valloric/vim-indent-guides'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
