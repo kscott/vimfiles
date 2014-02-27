@@ -67,7 +67,7 @@ endif
 	set autowrite					" Automatically save when jumping around buffers
 	set backspace=indent,eol,start	" backspace for dummys
 	if v:version >= 703
-		set colorcolumn=125			" Highlight the optimal width for code
+		set colorcolumn=140			" Highlight the optimal width for code
 	endif
 	set cursorline					" highlight current line
 	set encoding=utf-8
