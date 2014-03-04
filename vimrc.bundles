@@ -45,6 +45,7 @@ Bundle 'joonty/vim-phpunitqf'
 Bundle 'techlivezheng/vim-plugin-tagbar-phpctags'
 
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rbenv'

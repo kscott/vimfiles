@@ -190,6 +190,8 @@ endif
 		augroup Ruby
 			autocmd!
 			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+			autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
+			autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
 		augroup END
 
 		" Sass coding settings"
@@ -347,6 +349,9 @@ endif
 	let g:dbext_default_profile_bbt = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=bbt;host=localhost'
 
 	let g:dbext_default_profile = 'ccb'
+
+	"rspec.vim
+	let g:rspec_command = "!rspec --color --format doc {spec}"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
