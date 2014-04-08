@@ -6,7 +6,8 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'mbbill/undotree'
+" Bundle 'mbbill/undotree'
+Bundle 'sjl/gundo.vim'
 Bundle 'Valloric/ListToggle'
 
 Bundle 'bling/vim-airline'
@@ -16,10 +17,10 @@ Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
+" Bundle 'tpope/vim-speeddating'
 
 Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'ervandew/supertab'
+" #Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'robmiller/vim-movar'
@@ -29,6 +30,7 @@ Bundle 'tommcdo/vim-exchange'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 " Bundle 'Valloric/vim-indent-guides'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 
@@ -40,19 +42,21 @@ Bundle "honza/vim-snippets"
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
-Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
+" Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
+Bundle 'joonty/vdebug'
 Bundle 'joonty/vim-phpunitqf'
-Bundle 'techlivezheng/vim-plugin-tagbar-phpctags'
+Bundle 'rayburgemeestre/phpfolding.vim'
+Bundle 'vim-php/tagbar-phpctags.vim'
 
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-cucumber'
+" Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rbenv'
 Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'hail2u/vim-css3-syntax'
-" Bundle 'Valloric/MatchTagAlways'
+Bundle 'Valloric/MatchTagAlways'
 
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-haml'
@@ -66,11 +70,11 @@ Bundle 'matchit.zip'
 Bundle 'SQLUtilities'
 Bundle 'ZoomWin'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'chriskempson/base16-vim'
-Bundle 'baskerville/bubblegum'
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'jonathanfilip/vim-lucius'
+" Bundle 'chriskempson/base16-vim'
+" Bundle 'baskerville/bubblegum'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'Zenburn'
+" Bundle 'Zenburn'
 
 filetype plugin indent on

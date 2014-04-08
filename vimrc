@@ -69,6 +69,7 @@ endif
 	if v:version >= 703
 		set colorcolumn=140			" Highlight the optimal width for code
 	endif
+	set clipboard=unnamed			" Copy result of yy,d, etc. to system clipboard
 	set cursorline					" highlight current line
 	set encoding=utf-8
 	set fillchars=vert:\ 			" Use a space to separate vertical splits
@@ -102,7 +103,7 @@ endif
 	set smarttab
 	set softtabstop=4				" How wide for soft tabs
 	set tabstop=4					" an indentation every four columns
-	set tags=./tmtags,tmtags,./tags,tags;$HOME
+	set tags=./tags,tags;$HOME
 	set tildeop						" make the tilde key act as an operator
 	set ttimeoutlen=50
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
@@ -352,6 +353,37 @@ endif
 
 	"rspec.vim
 	let g:rspec_command = "!rspec --color --format doc {spec}"
+
+	function! NeatFoldText()
+		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+		let lines_count = v:foldend - v:foldstart + 1
+		let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+		let foldchar = matchstr(&fillchars, 'fold:\zs.')
+		let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+		let foldtextend = lines_count_text . repeat(foldchar, 8)
+		let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+		return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+	endfunction
+	set foldtext=NeatFoldText()
+
+	let g:EclimJavascriptValidate = 0
+	let g:EclimCompletionMethod = 'omnifunc'
+
+	let g:easytags_updatetime_autoadjust = 1
+	let g:easytags_updatetime_warn = 0
+	let g:easytags_updatetime_autoadjust_warning = 0
+	let g:easytags_dynamic_files = 1
+	let g:easytags_file = './tags'
+
+	let g:easytags_languages = {
+	\   'javascript': {
+	\       'cmd': 'jsctags',
+	\       'args': [],
+	\       'fileoutput_opt': '-f',
+	\       'stdout_opt': '-f-',
+	\       'recurse_flag': '-R'
+	\   }
+	\}
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
