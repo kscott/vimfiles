@@ -118,8 +118,6 @@ endif
 	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
 	set background=dark
-	let g:zenburn_high_Contrast=1
-    let g:zenburn_alternate_Visual = 1
 	colorscheme jellybeans			" load a colorscheme
 " }
 
@@ -188,12 +186,12 @@ endif
 		" augroup END
 
 		" Ruby coding settings"
-		augroup Ruby
-			autocmd!
-			autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
-			autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
-		augroup END
+		" augroup Ruby
+		" 	autocmd!
+		" 	autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+		" 	autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
+		" 	autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
+		" augroup END
 
 		" Sass coding settings"
 		augroup Sass
@@ -251,10 +249,6 @@ endif
 
 	let g:bufferline_echo = 0
 
-	" Supertab
-	let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-	let g:SuperTabClosePreviewOnPopupClose = 1
-
 	" SQL Utilities
 	let g:sqlutil_align_where = 1
 	let g:sqlutil_align_comma = 1
@@ -265,7 +259,7 @@ endif
 	let g:sqlutil_wrap_expressions = 1
 	let g:sqlutil_split_unbalanced_paran = 1
 	let g:sqlutil_indent_nested_blocks = 1
-	let g:sqlutil_non_line_break_keywords = 'as,like,desc,asc'
+	let g:sqlutil_non_line_break_keywords = 'as,like,desc,asc,inner,outer'
 	let g:sqlutil_stmt_keywords = 'select,insert,update,delete,with,merge,case,when,else,join'
 
 	" ZoomWin configuration
@@ -295,6 +289,7 @@ endif
 
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['css'] }
 	let g:syntastic_php_checkers=['php', 'phpcs']
+	let g:syntastic_javascript_checkers = ['jshint']
 
 	" PHP CS Fixer
 	let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
@@ -308,22 +303,6 @@ endif
 
 	" Itchy
 	nmap <leader>s :Scratch<CR>
-
-	" DBGp
-	map <leader>1 :python debugger_resize()<cr>
-	map <leader>4 :python debugger_command('step_out')<cr>
-	map <leader>5 :python debugger_run()<cr>
-	map <leader>6 :python debugger_quit()<cr>
-	map <leader>7 :python debugger_command('step_into')<cr>
-	map <leader>8 :python debugger_command('step_over')<cr>
-	map <leader>9 :python debugger_context()<cr>
-	map <leader>0 :python debugger_property()<cr>
-	map <leader>9 :python debugger_watch_input("context_get")<cr>A<cr>
-	map <leader>0 :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
-	map <leader>b :Bp<cr>
-	map <leader>e :python debugger_watch_input("eval")<cr>A
-
-	let g:useCustomColors = 1
 
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
@@ -366,24 +345,11 @@ endif
 	endfunction
 	set foldtext=NeatFoldText()
 
-	let g:EclimJavascriptValidate = 0
-	let g:EclimCompletionMethod = 'omnifunc'
+	let g:UltiSnipsJumpForwardTrigger="<c-j>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-	let g:easytags_updatetime_autoadjust = 1
-	let g:easytags_updatetime_warn = 0
-	let g:easytags_updatetime_autoadjust_warning = 0
-	let g:easytags_dynamic_files = 1
-	let g:easytags_file = './tags'
-
-	let g:easytags_languages = {
-	\   'javascript': {
-	\       'cmd': 'jsctags',
-	\       'args': [],
-	\       'fileoutput_opt': '-f',
-	\       'stdout_opt': '-f-',
-	\       'recurse_flag': '-R'
-	\   }
-	\}
+	" If you want :UltiSnipsEdit to split your window.
+	let g:UltiSnipsEditSplit="vertical"
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

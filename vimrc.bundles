@@ -4,77 +4,62 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Bundle "gmarik/vundle"
 
-" Bundle 'mbbill/undotree'
-Bundle 'sjl/gundo.vim'
-Bundle 'Valloric/ListToggle'
+Bundle "sjl/gundo.vim"
+Bundle "Valloric/ListToggle"
 
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'programble/itchy.vim'
-Bundle 'sjbach/lusty'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-repeat'
-" Bundle 'tpope/vim-speeddating'
+Bundle "bling/vim-airline"
+Bundle "kien/ctrlp.vim"
+Bundle "mileszs/ack.vim"
+Bundle "programble/itchy.vim"
+Bundle "sjbach/lusty"
+Bundle "tpope/vim-abolish"
+Bundle "tpope/vim-eunuch"
+Bundle "tpope/vim-repeat"
 
-Bundle 'AndrewRadev/splitjoin.vim'
-" #Bundle 'ervandew/supertab'
-Bundle 'majutsushi/tagbar'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'robmiller/vim-movar'
-Bundle 'scrooloose/syntastic'
-Bundle 'sdanielf/vim-stdtabs'
-Bundle 'tommcdo/vim-exchange'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-surround'
-" Bundle 'Valloric/vim-indent-guides'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-misc'
+Bundle "AndrewRadev/splitjoin.vim"
+Bundle "ntpeters/vim-better-whitespace"
+Bundle "robmiller/vim-movar"
+Bundle "scrooloose/syntastic"
+Bundle "sdanielf/vim-stdtabs"
+Bundle "tommcdo/vim-exchange"
+Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-surround"
+Bundle "Valloric/YouCompleteMe"
+Bundle "xolox/vim-misc"
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle "SirVer/ultisnips"
 Bundle "honza/vim-snippets"
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-git"
 
-" Bundle 'jaredcobb/DBGp-Remote-Debugger-Interface'
-Bundle 'joonty/vdebug'
-Bundle 'joonty/vim-phpunitqf'
-Bundle 'rayburgemeestre/phpfolding.vim'
-Bundle 'vim-php/tagbar-phpctags.vim'
+Bundle "joonty/vdebug"
+Bundle "joonty/vim-phpunitqf"
+Bundle "rayburgemeestre/phpfolding.vim"
 
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'thoughtbot/vim-rspec'
-" Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rbenv'
-Bundle 'vim-ruby/vim-ruby'
+Bundle "ecomba/vim-ruby-refactoring"
+Bundle "thoughtbot/vim-rspec"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-rbenv"
+Bundle "vim-ruby/vim-ruby"
 
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'Valloric/MatchTagAlways'
+Bundle "hail2u/vim-css3-syntax"
+Bundle "Valloric/MatchTagAlways"
 
-Bundle 'leshill/vim-json'
-Bundle 'tpope/vim-haml'
-Bundle 'othree/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
+Bundle "leshill/vim-json"
+Bundle "tpope/vim-haml"
+Bundle "othree/vim-javascript-syntax"
+Bundle "pangloss/vim-javascript"
 
-" Bundle 'tpope/vim-markdown'
+Bundle "Align"
+Bundle "matchit.zip"
+Bundle "SQLUtilities"
+Bundle "ZoomWin"
 
-Bundle 'Align'
-Bundle 'matchit.zip'
-Bundle 'SQLUtilities'
-Bundle 'ZoomWin'
-
-" Bundle 'altercation/vim-colors-solarized'
-" Bundle 'jonathanfilip/vim-lucius'
-" Bundle 'chriskempson/base16-vim'
-" Bundle 'baskerville/bubblegum'
-Bundle 'nanotech/jellybeans.vim'
-" Bundle 'Zenburn'
+Bundle "nanotech/jellybeans.vim"
 
 filetype plugin indent on
