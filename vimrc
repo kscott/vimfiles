@@ -287,8 +287,9 @@ endif
 	let g:syntastic_style_warning_symbol = '☯'
     let g:syntastic_check_on_open = 1
 	let g:syntastic_aggregate_errors = 1
+	let g:syntastic_enable_ruby_checker = 1
 
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['css'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['css'] }
 	let g:syntastic_ruby_checkers=['mri', 'ruby-lint', 'rubycop']
 	let g:syntastic_php_checkers=['php', 'phpcs']
 	let g:syntastic_javascript_checkers = ['jshint']
