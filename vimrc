@@ -286,8 +286,10 @@ endif
 	let g:syntastic_style_error_symbol = '☯'
 	let g:syntastic_style_warning_symbol = '☯'
     let g:syntastic_check_on_open = 1
+	let g:syntastic_aggregate_errors = 1
 
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['css'] }
+	let g:syntastic_ruby_checkers=['mri', 'ruby-lint', 'rubycop']
 	let g:syntastic_php_checkers=['php', 'phpcs']
 	let g:syntastic_javascript_checkers = ['jshint']
 
@@ -332,6 +334,10 @@ endif
 
 	"rspec.vim
 	let g:rspec_command = "!rspec --color --format doc {spec}"
+	map <Leader>t :call RunCurrentSpecFile()<CR>
+	map <Leader>s :call RunNearestSpec()<CR>
+	map <Leader>l :call RunLastSpec()<CR>
+	map <Leader>a :call RunAllSpecs()<CR>
 
 	function! NeatFoldText()
 		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
@@ -350,6 +356,10 @@ endif
 
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
+
+	" ListToggle mappings
+    let g:lt_location_list_toggle_map = '<leader>w'
+    let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
