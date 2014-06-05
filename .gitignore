@@ -8,4 +8,5 @@ viminfo
 *tags
 *tags-*
 *.pyc
-
+.DS_Store
+Icon*
