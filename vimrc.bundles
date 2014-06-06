@@ -7,7 +7,7 @@ call vundle#rc()
 Bundle "gmarik/vundle"
 
 Bundle "sjl/gundo.vim"
-Bundle "Valloric/ListToggle"
+" Bundle "Valloric/ListToggle"
 
 Bundle "bling/vim-airline"
 Bundle "kien/ctrlp.vim"
@@ -61,5 +61,7 @@ Bundle "SQLUtilities"
 Bundle "ZoomWin"
 
 Bundle "nanotech/jellybeans.vim"
+
+" Bundle "FredKSchott/CoVim"
 
 filetype plugin indent on

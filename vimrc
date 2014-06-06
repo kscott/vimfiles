@@ -335,6 +335,7 @@ endif
 
 	"rspec.vim
 	let g:rspec_command = "!rspec --color --format doc {spec}"
+	let g:rspec_runner = "os_x_iterm"
 	map <Leader>t :call RunCurrentSpecFile()<CR>
 	map <Leader>s :call RunNearestSpec()<CR>
 	map <Leader>l :call RunLastSpec()<CR>
