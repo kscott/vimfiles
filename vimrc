@@ -12,22 +12,15 @@ endif
 
 	" Setting up the directories {
 		set viminfo='50,<1000,s100,:0,n~/.vim/viminfo
-		set backup						" backups are nice ...
-		set backupcopy=auto
-		set backupdir=$HOME/.vim/backup//	" but not when they clog .
-		set directory=$HOME/.vim/swap//	" Same for swap files
-		set viewdir=$HOME/.vim/views//	" same but for view files
+		" set backupdir=$HOME/.vim/backup//	" but not when they clog .
+		" set directory=$HOME/.vim/swap//	" Same for swap files
+		" set viewdir=$HOME/.vim/views//	" same but for view files
 		if v:version >= 703
-    		set undodir=$HOME/.vim/undo//     " same for persisitent undo
+    		" set undodir=$HOME/.vim/undo//     " same for persisitent undo
     		set undofile
     		set undolevels=1000
     		set undoreload=10000
 		endif
-
-		" Creating directories if they don't exist
-		silent execute '!mkdir -p $HOME/.vim/backup'
-		silent execute '!mkdir -p $HOME/.vim/swap'
-		silent execute '!mkdir -p $HOME/.vim/views'
 	" }
 " }
 
@@ -117,8 +110,10 @@ endif
 
 	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
-	set background=dark
-	colorscheme jellybeans			" load a colorscheme
+	set background=light
+	colorscheme solarized			" load a colorscheme
+	" set background=dark
+	" colorscheme jellybeans			" load a colorscheme
 " }
 
 " Key Mappings {
@@ -244,7 +239,8 @@ endif
 	let g:airline_enable_bufferline=0
 	let g:airline_inactive_collapse=0
 	let g:airline_detect_whitespace=0
-	let g:airline_theme='jellybeans'
+	" let g:airline_theme='jellybeans'
+	let g:airline_theme='solarized'
 	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%v%)'
 
 	let g:bufferline_echo = 0
@@ -333,8 +329,8 @@ endif
 
 	let g:dbext_default_profile = 'ccb'
 
-	"rspec.vim
-	let g:rspec_command = "!rspec --color --format doc {spec}"
+	"vim-rspec
+	" let g:rspec_command = "!bundle exec rspec {spec}"
 	let g:rspec_runner = "os_x_iterm"
 	map <Leader>t :call RunCurrentSpecFile()<CR>
 	map <Leader>s :call RunNearestSpec()<CR>
@@ -353,8 +349,15 @@ endif
 	endfunction
 	set foldtext=NeatFoldText()
 
-	let g:UltiSnipsJumpForwardTrigger="<c-j>"
-	let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+	" make YCM compatible with UltiSnips (using supertab)
+	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+	let g:SuperTabDefaultCompletionType = '<C-n>'
+
+	" better key bindings for UltiSnipsExpandTrigger
+	let g:UltiSnipsExpandTrigger = "<tab>"
+	let g:UltiSnipsJumpForwardTrigger = "<tab>"
+	let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
@@ -362,6 +365,12 @@ endif
 	" ListToggle mappings
     let g:lt_location_list_toggle_map = '<leader>w'
     let g:lt_quickfix_list_toggle_map = '<leader>q'
+
+	" vim-capslock
+	imap <C-g> <Plug>CapsLockToggle
+
+	" NERDTree
+	map <C-n> :NERDTreeToggle<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

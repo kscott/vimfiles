@@ -31,7 +31,8 @@ elseif has("mac")
 
 	"set guifont=Monaco:h14
 	set guifont=Consolas:h15.00,Source\ Code\ Pro:h15,Monaco:h14
-	colorscheme lucius
+	colorscheme nefertiti
+	AirlineTheme kalisi
 
 	" vim-indent-guides
 	let g:indent_guides_enable_on_vim_startup = 0
