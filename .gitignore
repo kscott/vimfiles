@@ -10,3 +10,4 @@ viminfo
 *.pyc
 .DS_Store
 Icon*
+vim/view

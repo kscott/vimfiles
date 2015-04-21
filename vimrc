@@ -9,6 +9,7 @@ endif
 	filetype plugin indent on	" Automatically detect file types.
 	syntax on					" syntax highlighting
 	scriptencoding utf-8
+	set t_Co=256
 
 	" Setting up the directories {
 		set viminfo='50,<1000,s100,:0,n~/.vim/viminfo
@@ -16,7 +17,7 @@ endif
 		" set directory=$HOME/.vim/swap//	" Same for swap files
 		" set viewdir=$HOME/.vim/views//	" same but for view files
 		if v:version >= 703
-    		" set undodir=$HOME/.vim/undo//     " same for persisitent undo
+    		set undodir=$HOME/.vim/undo     " same for persisitent undo
     		set undofile
     		set undolevels=1000
     		set undoreload=10000
@@ -59,6 +60,7 @@ endif
 	set autoindent					" indent at the same level of the previous line
 	set autowrite					" Automatically save when jumping around buffers
 	set backspace=indent,eol,start	" backspace for dummys
+	set nobackup
 	if v:version >= 703
 		set colorcolumn=140			" Highlight the optimal width for code
 	endif
@@ -72,7 +74,9 @@ endif
 	set hlsearch					" highlight search terms
 	set ignorecase					" case insensitive search
 	set incsearch					" find as you type search
+	set nojoinspaces				" Add one space after "." when joining lines
 	set laststatus=2				" always show status line
+	set lazyredraw
 	set linespace=0					" No extra spaces between rows
 	set nolist
     set listchars=tab:▸\ ,eol:¬,trail:•		" Use the same symbols as TextMate for tabstops and EOLs
@@ -86,8 +90,11 @@ endif
 	set secure						" just in case...
 	set shiftround
 	set shiftwidth=4				" use indents of 4 spaces
-	set shortmess+=filmnrxoOtT		" abbrev. of messages (avoids 'hit enter')
-	set showcmd						" show partial commands in status line and selected characters/lines in visual mode
+	set shortmess+=filmnrxoOatIT	" abbrev. of messages (avoids 'hit enter')
+	set noshowcmd						" show partial commands in status line and selected characters/lines in visual mode
+	set nostartofline               " Don't move cursor to start of line when moving
+	set noswapfile
+	set synmaxcol=250               " Don't try syntax matching after column 250
 	set cmdheight=1
 	set relativenumber
 	set showmatch					" show matching brackets/parenthesis
@@ -99,6 +106,8 @@ endif
 	set tags=./tags,tags;$HOME
 	set tildeop						" make the tilde key act as an operator
 	set ttimeoutlen=50
+	set ttyfast
+	set ttyscroll=3
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	"set wildmenu					" show list instead of just completing
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
@@ -110,8 +119,8 @@ endif
 
 	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
-	set background=light
-	colorscheme solarized			" load a colorscheme
+	set background=dark
+	colorscheme gruvbox			" load a colorscheme
 	" set background=dark
 	" colorscheme jellybeans			" load a colorscheme
 " }
@@ -137,18 +146,18 @@ endif
 	nnoremap Y y$
 
 	" Open tag definitions in a vertical split
-	map <D-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+	map <M-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 	" Shortcuts
 	" Change Working Directory to that of the current file
 	noremap <silent><leader>cd :cd %:p:h<cr>
 
-	nnoremap <D-S-Down> :m+<CR>==
-	nnoremap <D-S-Up> :m-2<CR>==
-	inoremap <D-S-Down> <Esc>:m+<CR>==gi
-	inoremap <D-S-Up> <Esc>:m-2<CR>==gi
-	vnoremap <D-S-Down> :m'>+<CR>gv=gv
-	vnoremap <D-S-Up> :m-2<CR>gv=gv
+	nnoremap <M-S-Down> :m+<CR>==
+	nnoremap <M-S-Up> :m-2<CR>==
+	inoremap <M-S-Down> <Esc>:m+<CR>==gi
+	inoremap <M-S-Up> <Esc>:m-2<CR>==gi
+	vnoremap <M-S-Down> :m'>+<CR>gv=gv
+	vnoremap <M-S-Up> :m-2<CR>gv=gv
 
 	" This command will allow us to save a file we don't have permission to save
 	" *after* we have already opened it. Super useful.
@@ -181,12 +190,14 @@ endif
 		" augroup END
 
 		" Ruby coding settings"
-		" augroup Ruby
-		" 	autocmd!
-		" 	autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-		" 	autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
-		" 	autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
-		" augroup END
+		augroup Ruby
+			autocmd!
+			autocmd BufEnter *.rb syn match error contained "\<binding.pry\>"
+			autocmd BufEnter *.rb syn match error contained "\<debugger\>"
+			" 	autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
+			" 	autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
+			" 	autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
+		augroup END
 
 		" Sass coding settings"
 		augroup Sass
@@ -222,6 +233,10 @@ endif
 
 " Plugin Settings {
 	" vim-airline
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
+
 	" unicode symbols
 	let g:airline_left_sep = ''
 "	let g:airline_left_sep = '»'
@@ -229,19 +244,20 @@ endif
 	let g:airline_right_sep = ''
 "	let g:airline_right_sep = '«'
 "	let g:airline_right_sep = '◀'
-	let g:airline_branch_prefix = '⎇ '
-	let g:airline_paste_symbol = '◉'
+	let g:airline_symbols.branch = '⎇ '
+	let g:airline_symbols.paste = '◉'
+	let g:airline_symbols.linenr = '§'
 	let g:airline#extensions#readonly#symbol = '✖'
-	let g:airline_linecolumn_prefix = '§'
 	let g:airline_modified_detection=1
-	let g:airline_enable_branch=1
-	let g:airline_enable_syntastic=1
-	let g:airline_enable_bufferline=0
+	let g:airline#extensions#branch#enabled = 1
+	let g:airline#extensions#syntastic#enabled = 1
+	let g:airline#extensions#bufferline#enabled = 1
 	let g:airline_inactive_collapse=0
-	let g:airline_detect_whitespace=0
+	let g:airline#extensions#whitespace#enabled = 0
 	" let g:airline_theme='jellybeans'
-	let g:airline_theme='solarized'
-	let g:airline_section_z='%13(%p%% '.g:airline_linecolumn_prefix.'%l:%v%)'
+	" let g:airline_theme='solarized'
+	let g:airline_theme='kalisi'
+	let g:airline_section_z='%13(%p%% '.g:airline_symbols.linenr.'%l:%v%)'
 
 	let g:bufferline_echo = 0
 
@@ -290,18 +306,22 @@ endif
 	let g:syntastic_php_checkers=['php', 'phpcs']
 	let g:syntastic_javascript_checkers = ['jshint']
 
+	" vim-ruby
+	let g:ruby_indent_access_modifier_style = 'indent'
+	let ruby_spellcheck_strings = 1
+
 	" PHP CS Fixer
-	let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
-	let g:php_cs_fixer_level = "all"                " which level ?
-	let g:php_cs_fixer_config = "default"           " configuration
-	let g:php_cs_fixer_php_path = "php"             " Path to PHP
-	let g:php_cs_fixer_fixers_list = ""             " List of fixers
-	let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
-	let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
-	let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
+	" let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
+	" let g:php_cs_fixer_level = "all"                " which level ?
+	" let g:php_cs_fixer_config = "default"           " configuration
+	" let g:php_cs_fixer_php_path = "php"             " Path to PHP
+	" let g:php_cs_fixer_fixers_list = ""             " List of fixers
+	" let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
+	" let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
+	" let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
 
 	" Itchy
-	nmap <leader>s :Scratch<CR>
+	nmap <leader>c :Scratch<CR>
 
 	" setup gdbp settings
 	let g:debuggerMaxChildren = 2048
@@ -337,22 +357,23 @@ endif
 	map <Leader>l :call RunLastSpec()<CR>
 	map <Leader>a :call RunAllSpecs()<CR>
 
-	function! NeatFoldText()
-		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-		let lines_count = v:foldend - v:foldstart + 1
-		let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-		let foldchar = matchstr(&fillchars, 'fold:\zs.')
-		let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-		let foldtextend = lines_count_text . repeat(foldchar, 8)
-		let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-		return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-	endfunction
-	set foldtext=NeatFoldText()
+	" function! NeatFoldText()
+	" 	let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+	" 	let lines_count = v:foldend - v:foldstart + 1
+	" 	let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+	" 	let foldchar = matchstr(&fillchars, 'fold:\zs.')
+	" 	let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+	" 	let foldtextend = lines_count_text . repeat(foldchar, 8)
+	" 	let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+	" 	return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+	" endfunction
+	" set foldtext=NeatFoldText()
 
 	" make YCM compatible with UltiSnips (using supertab)
 	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 	let g:SuperTabDefaultCompletionType = '<C-n>'
+	let g:ycm_collect_identifiers_from_tags_files = 1
 
 	" better key bindings for UltiSnipsExpandTrigger
 	let g:UltiSnipsExpandTrigger = "<tab>"
@@ -363,14 +384,18 @@ endif
 	let g:UltiSnipsEditSplit="vertical"
 
 	" ListToggle mappings
-    let g:lt_location_list_toggle_map = '<leader>w'
-    let g:lt_quickfix_list_toggle_map = '<leader>q'
+    " let g:lt_location_list_toggle_map = '<leader>w'
+    " let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 	" vim-capslock
 	imap <C-g> <Plug>CapsLockToggle
 
 	" NERDTree
 	map <C-n> :NERDTreeToggle<CR>
+
+	" vim-easytags
+	let g:easytags_async = 1
+	let g:easytags_dynamic_files = 1
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

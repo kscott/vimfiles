@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 Bundle "gmarik/vundle"
 
@@ -27,6 +27,7 @@ Bundle "machakann/vim-textobj-delimited"
 Bundle "ntpeters/vim-better-whitespace"
 Bundle "robmiller/vim-movar"
 Bundle "scrooloose/nerdtree"
+Bundle 'dockyard/vim-easydir'
 Bundle "scrooloose/syntastic"
 Bundle "sdanielf/vim-stdtabs"
 Bundle "tommcdo/vim-exchange"
@@ -46,34 +47,38 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
 
 Bundle "joonty/vdebug"
-Bundle "joonty/vim-phpunitqf"
-Bundle "rayburgemeestre/phpfolding.vim"
+" Bundle "joonty/vim-phpunitqf"
+" Bundle "rayburgemeestre/phpfolding.vim"
 
 Bundle "ecomba/vim-ruby-refactoring"
+Bundle "jgdavey/vim-blockle"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "thoughtbot/vim-rspec"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-rbenv"
 Bundle "vim-ruby/vim-ruby"
 
-Bundle "hail2u/vim-css3-syntax"
+" Bundle "hail2u/vim-css3-syntax"
 Bundle "Valloric/MatchTagAlways"
 
-Bundle "cakebaker/scss-syntax.vim"
+" Bundle "cakebaker/scss-syntax.vim"
 Bundle "leshill/vim-json"
-Bundle "othree/vim-javascript-syntax"
-Bundle "pangloss/vim-javascript"
+" Bundle "othree/vim-javascript-syntax"
+" Bundle "pangloss/vim-javascript"
 
 Bundle "Align"
 Bundle "matchit.zip"
 Bundle "SQLUtilities"
 Bundle "ZoomWin"
 Bundle "sorcerer"
-Bundle "twilight256"
+Bundle "twilight256.vim"
 
 Bundle "nanotech/jellybeans.vim"
 Bundle "altercation/vim-colors-solarized"
 Bundle "jeetsukumaran/vim-nefertiti"
 Bundle "cocopon/iceberg.vim"
+Bundle "freeo/vim-kalisi"
+Bundle "morhetz/gruvbox"
+Bundle "john2x/flatui.vim"
 
-filetype plugin indent on
+call vundle#end()
