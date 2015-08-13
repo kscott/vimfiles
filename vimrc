@@ -115,12 +115,10 @@ endif
 	set winminheight=0				" windows can be 0 characters wide
 	set winminheight=0				" windows can be 0 line high
 
-	syn match rubyConditionalError "\<\%(else if\|elseif\)\>[?!]\@!"
-
 	" let g:solarized_visibility = "low"
 	" let g:solarized_hitrail = 1
-	set background=dark
-	colorscheme gruvbox			" load a colorscheme
+	set background=light
+	colorscheme PaperColor			" load a colorscheme
 	" set background=dark
 	" colorscheme jellybeans			" load a colorscheme
 " }
@@ -177,46 +175,12 @@ endif
 		autocmd BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		autocmd BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 
-		" PHP coding settings"
-		augroup PHP
-			autocmd!
-			autocmd FileType php setlocal autoindent tabstop=4 shiftwidth=4 softtabstop=4 smarttab noexpandtab formatoptions=croq commentstring=//\ %s
-		augroup END
-
-		" Javascript coding settings"
-		" augroup Javascript
-		" 	autocmd!
-		" 	autocmd FileType javascript setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-		" augroup END
-
 		" Ruby coding settings"
 		augroup Ruby
 			autocmd!
 			autocmd BufEnter *.rb syn match error contained "\<binding.pry\>"
 			autocmd BufEnter *.rb syn match error contained "\<debugger\>"
-			" 	autocmd FileType ruby setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-			" 	autocmd FileType ruby map <buffer> <Leader>t :call RunCurrentSpecFile()<CR>
-			" 	autocmd FileType ruby map <buffer> <Leader>s :call RunNearestSpec()<CR>
 		augroup END
-
-		" Sass coding settings"
-		augroup Sass
-			autocmd!
-			autocmd FileType scss setlocal nobackup nowritebackup noswapfile autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-		augroup END
-
-		" Cucumber coding settings"
-		augroup Cucumber
-			autocmd!
-			autocmd FileType cucumber setlocal autoindent tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab formatoptions=croq
-		augroup END
-
-		" autocomplete functions and identifiers for languages
-		autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-		autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-		autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-		autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-		autocmd FileType sql set omnifunc=sqlcomplete#Complete
 
 		autocmd BufWritePost .vimrc source $MYVIMRC
 		autocmd BufWritePost .gvimrc source $MYGVIMRC
@@ -240,7 +204,7 @@ endif
 	" unicode symbols
 	let g:airline_left_sep = ''
 "	let g:airline_left_sep = '»'
-"	let g:airline_left_sep = '▶'
+ 	" let g:airline_left_sep = '▶'
 	let g:airline_right_sep = ''
 "	let g:airline_right_sep = '«'
 "	let g:airline_right_sep = '◀'
@@ -254,9 +218,9 @@ endif
 	let g:airline#extensions#bufferline#enabled = 1
 	let g:airline_inactive_collapse=0
 	let g:airline#extensions#whitespace#enabled = 0
-	" let g:airline_theme='jellybeans'
 	" let g:airline_theme='solarized'
-	let g:airline_theme='kalisi'
+	" let g:airline_theme='kalisi'
+	let g:airline_theme='papercolor'
 	let g:airline_section_z='%13(%p%% '.g:airline_symbols.linenr.'%l:%v%)'
 
 	let g:bufferline_echo = 0
@@ -285,10 +249,6 @@ endif
 	let g:LustyJugglerShowKeys = 'a'
 	nmap <silent> <Leader>j :LustyJuggler<CR>
 	noremap <silent> <A-s> :LustyJuggler<CR>
-
-	" Commentary
-	nmap <D-/> <Plug>CommentaryLine
-	xmap <D-/> <Plug>Commentary
 
 	" Syntastic
 	"let g:syntastic_auto_jump=1
@@ -394,8 +354,17 @@ endif
 	map <C-n> :NERDTreeToggle<CR>
 
 	" vim-easytags
+	let g:easytags_file = '~/.vim/tags'
 	let g:easytags_async = 1
 	let g:easytags_dynamic_files = 1
+
+	" vim-indent-guides
+	let g:indent_guides_auto_colors = 1
+	" let g:indent_guides_start_level = 2
+
+	" Ctrl-P
+	let g:ctrlp_working_path_mode = 'ra'
+	let g:ctrlp_show_hidden = 1
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
