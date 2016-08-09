@@ -9,7 +9,8 @@ Bundle "gmarik/vundle"
 " Bundle "sjl/gundo.vim"
 " Bundle "Valloric/ListToggle"
 
-Bundle "bling/vim-airline"
+Bundle "vim-airline/vim-airline"
+Bundle "vim-airline/vim-airline-themes"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle "mileszs/ack.vim"
 Bundle "pbrisbin/vim-mkdir"
@@ -66,7 +67,7 @@ Bundle "vim-ruby/vim-ruby"
 " Bundle "Valloric/MatchTagAlways"
 
 " Bundle "cakebaker/scss-syntax.vim"
-Bundle "leshill/vim-json"
+Bundle "elzr/vim-json"
 " Bundle "othree/vim-javascript-syntax"
 " Bundle "pangloss/vim-javascript"
 

@@ -182,8 +182,17 @@ endif
 			autocmd BufEnter *.rb syn match error contained "\<debugger\>"
 		augroup END
 
-		autocmd BufWritePost .vimrc source $MYVIMRC
-		autocmd BufWritePost .gvimrc source $MYGVIMRC
+		augroup PHP
+			autocmd!
+			autocmd FileType php setlocal commentstring=\/\/\ %s
+			autocmd FileType php setlocal tabstop=4
+			autocmd FileType php setlocal softtabstop=4
+			autocmd FileType php setlocal shiftwidth=4
+			autocmd FileType php setlocal noexpandtab
+		augroup END
+
+		autocmd BufWritePost .vimrc nested source $MYVIMRC
+		autocmd BufWritePost .gvimrc nested source $MYGVIMRC
 	endif
 " }
 
@@ -201,17 +210,25 @@ endif
 		let g:airline_symbols = {}
 	endif
 
+	" powerline symbols
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
+	let g:airline_symbols.linenr = ''
 	" unicode symbols
-	let g:airline_left_sep = ''
+	" let g:airline_left_sep = ''
 "	let g:airline_left_sep = '»'
  	" let g:airline_left_sep = '▶'
-	let g:airline_right_sep = ''
+	" let g:airline_right_sep = ''
 "	let g:airline_right_sep = '«'
 "	let g:airline_right_sep = '◀'
-	let g:airline_symbols.branch = '⎇ '
+	" let g:airline_symbols.branch = '⎇ '
 	let g:airline_symbols.paste = '◉'
-	let g:airline_symbols.linenr = '§'
-	let g:airline#extensions#readonly#symbol = '✖'
+	" let g:airline_symbols.linenr = '§'
+	" let g:airline#extensions#readonly#symbol = '✖'
 	let g:airline_modified_detection=1
 	let g:airline#extensions#branch#enabled = 1
 	let g:airline#extensions#syntastic#enabled = 1
@@ -222,6 +239,7 @@ endif
 	" let g:airline_theme='kalisi'
 	let g:airline_theme='papercolor'
 	let g:airline_section_z='%13(%p%% '.g:airline_symbols.linenr.'%l:%v%)'
+	let g:airline_powerline_fonts = 1
 
 	let g:bufferline_echo = 0
 
@@ -264,7 +282,8 @@ endif
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['css'] }
 	let g:syntastic_ruby_checkers=['mri', 'ruby-lint', 'rubycop']
 	let g:syntastic_php_checkers=['php', 'phpcs']
-	let g:syntastic_javascript_checkers = ['jshint']
+	" let g:syntastic_javascript_checkers = ['jshint']
+	let g:syntastic_javascript_checkers = ['eslint']
 
 	" vim-ruby
 	let g:ruby_indent_access_modifier_style = 'indent'
@@ -366,8 +385,26 @@ endif
 	let g:ctrlp_working_path_mode = 'ra'
 	let g:ctrlp_show_hidden = 1
 
+	let g:vdebug_options = {
+\'debug_file_level': 2,
+\'watch_window_style': 'expanded',
+\'marker_default': '*',
+\'continuous_mode': 0,
+\'ide_key': 'vagrant',
+\'break_on_open': 1,
+\'on_close': 'detach',
+\'path_maps': {'/var/www/app': '/Users/ken/Development/churchcommunitybuilder/app'},
+\'marker_closed_tree': '+',
+\'timeout': 20,
+\'port': 9000,
+\'marker_open_tree': '-',
+\'debug_window_level': 1,
+\'server': '0.0.0.0'
+\}
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+highlight Comment cterm=NONE
