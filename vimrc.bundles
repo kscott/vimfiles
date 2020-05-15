@@ -1,90 +1,53 @@
-set nocompatible
-filetype off
+call plug#begin('~/.vim/bundle')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+Plug 'itchyny/lightline.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'programble/itchy.vim'
+Plug 'sjbach/lusty'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-capslock'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'editorconfig/editorconfig-vim'
 
-Bundle "gmarik/vundle"
+Plug 'ervandew/supertab'
+Plug 'kana/vim-textobj-user'
+Plug 'machakann/vim-textobj-delimited'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'dockyard/vim-easydir'
+Plug 'sdanielf/vim-stdtabs'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-markdown'
+Plug 'Valloric/YouCompleteMe'
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Bundle "sjl/gundo.vim"
-" Bundle "Valloric/ListToggle"
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 
-Bundle "vim-airline/vim-airline"
-Bundle "vim-airline/vim-airline-themes"
-Bundle "ctrlpvim/ctrlp.vim"
-Bundle "mileszs/ack.vim"
-Bundle "pbrisbin/vim-mkdir"
-Bundle "programble/itchy.vim"
-Bundle "sjbach/lusty"
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-capslock"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-repeat"
-Bundle "evanmiller/nginx-vim-syntax"
+Plug 'danchoi/ruby_bashrockets.vim'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'hashivim/vim-terraform'
+Plug 'jparise/vim-graphql'
+Plug 'rust-lang/rust.vim'
+Plug 'udalov/kotlin-vim'
 
-Bundle "ervandew/supertab"
-Bundle "AndrewRadev/splitjoin.vim"
-Bundle "kana/vim-textobj-user"
-Bundle "majutsushi/tagbar"
-Bundle "machakann/vim-textobj-delimited"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "ntpeters/vim-better-whitespace"
-" Bundle "robmiller/vim-movar"
-Bundle "scrooloose/nerdtree"
-Bundle 'dockyard/vim-easydir'
-Bundle "scrooloose/syntastic"
-Bundle "sdanielf/vim-stdtabs"
-Bundle "tommcdo/vim-exchange"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-markdown"
-Bundle "Valloric/YouCompleteMe"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-easytags"
+Plug 'elzr/vim-json'
 
-" Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "tomtom/tlib_vim"
-" Bundle "SirVer/ultisnips"
-" Bundle "honza/vim-snippets"
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/matchit.zip'
 
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-git"
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
-" Bundle "joonty/vdebug"
-" Bundle "joonty/vim-phpunitqf"
-" Bundle "rayburgemeestre/phpfolding.vim"
-
-Bundle "danchoi/ruby_bashrockets.vim"
-Bundle "ecomba/vim-ruby-refactoring"
-" Bundle "jgdavey/vim-blockle"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "thoughtbot/vim-rspec"
-Bundle "tpope/vim-endwise"
-" Bundle "tpope/vim-rbenv"
-Bundle "vim-ruby/vim-ruby"
-
-" Bundle "hail2u/vim-css3-syntax"
-" Bundle "Valloric/MatchTagAlways"
-
-" Bundle "cakebaker/scss-syntax.vim"
-Bundle "elzr/vim-json"
-" Bundle "othree/vim-javascript-syntax"
-" Bundle "pangloss/vim-javascript"
-
-Bundle "Align"
-Bundle "matchit.zip"
-Bundle "SQLUtilities"
-Bundle "ZoomWin"
-" Bundle "sorcerer"
-" Bundle "twilight256.vim"
-
-Bundle "nanotech/jellybeans.vim"
-" Bundle "altercation/vim-colors-solarized"
-" Bundle "jeetsukumaran/vim-nefertiti"
-" Bundle "cocopon/iceberg.vim"
-" Bundle "freeo/vim-kalisi"
-" Bundle "morhetz/gruvbox"
-" Bundle "john2x/flatui.vim"
-Bundle 'NLKNguyen/papercolor-theme'
-
-call vundle#end()
+call plug#end()

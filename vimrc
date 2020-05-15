@@ -92,6 +92,7 @@ endif
 	set shiftwidth=4				" use indents of 4 spaces
 	set shortmess+=filmnrxoOatIT	" abbrev. of messages (avoids 'hit enter')
 	set noshowcmd						" show partial commands in status line and selected characters/lines in visual mode
+	set noshowmode                  " Don't show -- INSERT -- etc. at bottom of screen
 	set nostartofline               " Don't move cursor to start of line when moving
 	set noswapfile
 	set synmaxcol=250               " Don't try syntax matching after column 250
@@ -112,15 +113,13 @@ endif
 	"set wildmenu					" show list instead of just completing
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
 	set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
-	set winminheight=0				" windows can be 0 characters wide
+	set winminwidth=0				" windows can be 0 characters wide
 	set winminheight=0				" windows can be 0 line high
 
-	" let g:solarized_visibility = "low"
-	" let g:solarized_hitrail = 1
-	set background=light
-	colorscheme PaperColor			" load a colorscheme
-	" set background=dark
+	set background=dark
+	" colorscheme PaperColor			" load a colorscheme
 	" colorscheme jellybeans			" load a colorscheme
+	colorscheme gruvbox
 " }
 
 " Key Mappings {
@@ -202,62 +201,10 @@ endif
 	iabbrev lastmod  <C-R>="Last Modified: " . strftime("%a %b %d %H:%M:%S %Y %Z")<CR>
 	iabbrev kds <C-R>="Kenneth Scott"<CR>
 	iabbrev atccb <C-R>="kscott@ccbhq.com"<CR>
+	iabbrev ati <C-R>="ken.scott@ibotta.com"<CR>
 " }
 
 " Plugin Settings {
-	" vim-airline
-	if !exists('g:airline_symbols')
-		let g:airline_symbols = {}
-	endif
-
-	" powerline symbols
-	let g:airline_left_sep = ''
-	let g:airline_left_alt_sep = ''
-	let g:airline_right_sep = ''
-	let g:airline_right_alt_sep = ''
-	let g:airline_symbols.branch = ''
-	let g:airline_symbols.readonly = ''
-	let g:airline_symbols.linenr = ''
-	" unicode symbols
-	" let g:airline_left_sep = ''
-"	let g:airline_left_sep = '»'
- 	" let g:airline_left_sep = '▶'
-	" let g:airline_right_sep = ''
-"	let g:airline_right_sep = '«'
-"	let g:airline_right_sep = '◀'
-	" let g:airline_symbols.branch = '⎇ '
-	let g:airline_symbols.paste = '◉'
-	" let g:airline_symbols.linenr = '§'
-	" let g:airline#extensions#readonly#symbol = '✖'
-	let g:airline_modified_detection=1
-	let g:airline#extensions#branch#enabled = 1
-	let g:airline#extensions#syntastic#enabled = 1
-	let g:airline#extensions#bufferline#enabled = 1
-	let g:airline_inactive_collapse=0
-	let g:airline#extensions#whitespace#enabled = 0
-	" let g:airline_theme='solarized'
-	" let g:airline_theme='kalisi'
-	let g:airline_theme='papercolor'
-	let g:airline_section_z='%13(%p%% '.g:airline_symbols.linenr.'%l:%v%)'
-	let g:airline_powerline_fonts = 1
-
-	let g:bufferline_echo = 0
-
-	" SQL Utilities
-	let g:sqlutil_align_where = 1
-	let g:sqlutil_align_comma = 1
-	let g:sqlutil_cmd_terminator = ';'
-	let g:sqlutil_default_menu_mode = 0
-	let g:sqlutil_keyword_case = '\U'
-	let g:sqlutil_align_first_word = 1
-	let g:sqlutil_wrap_expressions = 1
-	let g:sqlutil_split_unbalanced_paran = 1
-	let g:sqlutil_indent_nested_blocks = 1
-	let g:sqlutil_non_line_break_keywords = 'as,like,desc,asc,inner,outer'
-	let g:sqlutil_stmt_keywords = 'select,insert,update,delete,with,merge,case,when,else,join'
-
-	" ZoomWin configuration
-	map <leader>z :ZoomWin<CR>
 
 	" Lusty
 	let g:LustyExplorerSuppressRubyWarning = 1
@@ -268,65 +215,15 @@ endif
 	nmap <silent> <Leader>j :LustyJuggler<CR>
 	noremap <silent> <A-s> :LustyJuggler<CR>
 
-	" Syntastic
-	"let g:syntastic_auto_jump=1
-	let g:syntastic_auto_loc_list = 1
-	let g:syntastic_error_symbol = '✗'
-	let g:syntastic_warning_symbol = '⚑'
-	let g:syntastic_style_error_symbol = '☯'
-	let g:syntastic_style_warning_symbol = '☯'
-    let g:syntastic_check_on_open = 1
-	let g:syntastic_aggregate_errors = 1
-	let g:syntastic_enable_ruby_checker = 1
-
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['css'] }
-	let g:syntastic_ruby_checkers=['mri', 'ruby-lint', 'rubycop']
-	let g:syntastic_php_checkers=['php', 'phpcs']
-	" let g:syntastic_javascript_checkers = ['jshint']
-	let g:syntastic_javascript_checkers = ['eslint']
-
 	" vim-ruby
 	let g:ruby_indent_access_modifier_style = 'indent'
 	let ruby_spellcheck_strings = 1
 
-	" PHP CS Fixer
-	" let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
-	" let g:php_cs_fixer_level = "all"                " which level ?
-	" let g:php_cs_fixer_config = "default"           " configuration
-	" let g:php_cs_fixer_php_path = "php"             " Path to PHP
-	" let g:php_cs_fixer_fixers_list = ""             " List of fixers
-	" let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
-	" let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
-	" let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
-
 	" Itchy
 	nmap <leader>c :Scratch<CR>
 
-	" setup gdbp settings
-	let g:debuggerMaxChildren = 2048
-	let g:debuggerMaxData = 8192
-	let g:debuggerMaxDepth = 10
-	let g:debuggerDisableDefaultMappings = 1
-
 	" Surround
 	let g:surround_35  = "#{\r}"   " ysiw# to wrap the token under cursor in #{}
-
-	" Tagbar
-	let g:tagbar_type_markdown = { 'ctagstype' : 'markdown', 'kinds' : [ 'h:Heading_L1', 'i:Heading_L2', 'k:Heading_L3' ] }
-
-	" Javascript syntax
-	let g:used_javascript_libs = 'jquery,underscore,backbone'
-
-	let g:html_indent_inctags = "html,body,head,tbody"
-	let g:html_indent_script1 = "inc"
-	let g:html_indent_style1 = "inc"
-
-	" dbext profiles
-	let g:dbext_default_profile_ccb = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=ccb_dev;host=localhost'
-	let g:dbext_default_profile_ccbcompany = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=ccbcompany;host=localhost'
-	let g:dbext_default_profile_bbt = 'type=DBI:user=root:passwd=kds007:driver=mysql:conn_parms=database=bbt;host=localhost'
-
-	let g:dbext_default_profile = 'ccb'
 
 	"vim-rspec
 	" let g:rspec_command = "!bundle exec rspec {spec}"
@@ -336,71 +233,60 @@ endif
 	map <Leader>l :call RunLastSpec()<CR>
 	map <Leader>a :call RunAllSpecs()<CR>
 
-	" function! NeatFoldText()
-	" 	let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-	" 	let lines_count = v:foldend - v:foldstart + 1
-	" 	let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-	" 	let foldchar = matchstr(&fillchars, 'fold:\zs.')
-	" 	let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-	" 	let foldtextend = lines_count_text . repeat(foldchar, 8)
-	" 	let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-	" 	return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-	" endfunction
-	" set foldtext=NeatFoldText()
-
 	" make YCM compatible with UltiSnips (using supertab)
 	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 	let g:SuperTabDefaultCompletionType = '<C-n>'
-	let g:ycm_collect_identifiers_from_tags_files = 1
-
-	" better key bindings for UltiSnipsExpandTrigger
-	let g:UltiSnipsExpandTrigger = "<tab>"
-	let g:UltiSnipsJumpForwardTrigger = "<tab>"
-	let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-	" If you want :UltiSnipsEdit to split your window.
-	let g:UltiSnipsEditSplit="vertical"
-
-	" ListToggle mappings
-    " let g:lt_location_list_toggle_map = '<leader>w'
-    " let g:lt_quickfix_list_toggle_map = '<leader>q'
-
-	" vim-capslock
-	imap <C-g> <Plug>CapsLockToggle
+	let g:ycm_collect_identifiers_from_tags_files = 0
 
 	" NERDTree
 	map <C-n> :NERDTreeToggle<CR>
-
-	" vim-easytags
-	let g:easytags_file = '~/.vim/tags'
-	let g:easytags_async = 1
-	let g:easytags_dynamic_files = 1
+	let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 	" vim-indent-guides
 	let g:indent_guides_auto_colors = 1
 	" let g:indent_guides_start_level = 2
 
+	" Terraform settings
+	let g:terraform_align=1
+	let g:terraform_fmt_on_save=1
+
 	" Ctrl-P
 	let g:ctrlp_working_path_mode = 'ra'
-	let g:ctrlp_show_hidden = 1
 
-	let g:vdebug_options = {
-\'debug_file_level': 2,
-\'watch_window_style': 'expanded',
-\'marker_default': '*',
-\'continuous_mode': 0,
-\'ide_key': 'vagrant',
-\'break_on_open': 1,
-\'on_close': 'detach',
-\'path_maps': {'/var/www/app': '/Users/ken/Development/churchcommunitybuilder/app'},
-\'marker_closed_tree': '+',
-\'timeout': 20,
-\'port': 9000,
-\'marker_open_tree': '-',
-\'debug_window_level': 1,
-\'server': '0.0.0.0'
-\}
+	let g:ctrlp_show_hidden = 1
+	let g:ctrlp_custom_ignore = "build"
+	if executable('ag')
+		let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	endif
+
+	let g:lightline = {
+	\   'colorscheme': 'gruvbox',
+	\   'active': {
+	\     'left': [ [ 'mode', 'paste' ],
+	\               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\   },
+	\   'component_function': {
+	\     'gitbranch': 'fugitive#head'
+	\   },
+	\ }
+
+	let g:gruvbox_contrast_light = 'hard'
+	let g:gruvbox_contrast_dark = 'hard'
+	let g:gruvbox_italicize_comments = 1
+
+	let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
